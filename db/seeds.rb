@@ -20,7 +20,7 @@ Product.create!(
   brand: "Lidl",
   quantity: 6,
   unit: 'pz',
-  price: 200,
+  price: 200
   )
 end
 
