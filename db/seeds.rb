@@ -22,7 +22,7 @@ Product.create!(
   unit: 'pz',
   price: 200
   )
-end
+
 
 Product.create!(
   name: "Carote",
@@ -31,7 +31,7 @@ Product.create!(
   unit: 'g',
   price: 100
   )
-end
+
 
 Product.create!(
   name: "Maltagliati 189 Pasta All'uovo",
@@ -40,7 +40,7 @@ Product.create!(
   unit: 'g',
   price: 200
   )
-end
+
 
 Product.create!(
   name: "Barilla spaghetti integrale",
@@ -49,7 +49,7 @@ Product.create!(
   unit: 'g',
   price: 139
   )
-end
+
 
 Product.create!(
   name: "Mirtilli freschi",
@@ -58,7 +58,7 @@ Product.create!(
   unit: 'g',
   price: 300
   )
-end
+
 
 
 puts 'finished!'
