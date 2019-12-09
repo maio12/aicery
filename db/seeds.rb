@@ -29,7 +29,7 @@ Product.create!(
   brand: "Eurospin",
   quantity: 1000,
   unit: 'g',
-  price: 100,
+  price: 100
   )
 end
 
@@ -38,7 +38,7 @@ Product.create!(
   brand: "EasyCoop",
   quantity: 250,
   unit: 'g',
-  price: 200,
+  price: 200
   )
 end
 
@@ -47,7 +47,7 @@ Product.create!(
   brand: "Barilla",
   quantity: 400,
   unit: 'g',
-  price: 139,
+  price: 139
   )
 end
 
@@ -56,7 +56,7 @@ Product.create!(
   brand: "Carrefour",
   quantity: 300,
   unit: 'g',
-  price: 300,
+  price: 300
   )
 end
 
