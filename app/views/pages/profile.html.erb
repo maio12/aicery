@@ -1,22 +1,23 @@
+<br>
+<body>
 <div class="card-profile">
-  <%= link_to root_path, :action => 'go' do %>
+  <%= link_to lists_path, :action => 'go' do %>
   <p>
-<i class="fas fa-cart-plus" style="vertical-align: middle;">
+<i class="fas fa-cart-plus" style="color:black">
   Your details
   </i></p>
 <% end %>
 </div>
-
+<br>
 <div class="card-profile">
 <%= link_to edit_user_registration_path :action => 'go' do %>
-<p> <i class="fas fa-user" style="vertical-align: middle;"> My Account Details</i></p>
+<p> <i class="fas fa-user" style="color:black"> My Account Details</i></p>
  <% end %>
 </div>
-
-<div class="card-profile">
+<br>
 <%= link_to destroy_user_session_path, method: :delete, :action => 'go' do %>
-<p><i class="fas fa-sign-out-alt"> Logout</i></p>
+<div class="card-profile">
+<p><i class="fas fa-sign-out-alt" style="color:black"> Logout</i></p>
 <% end %>
 </div>
-
-
+</body>
