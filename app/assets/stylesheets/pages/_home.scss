@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-left: 16px;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.bar {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-home-page {
+  height: 900px;
+  width: 400px;
+}
+
+.form-home-page {
+  display: flex;
+}
