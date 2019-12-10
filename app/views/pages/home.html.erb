@@ -1,3 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-home-page">
+<div class="bar">
+<%= form_tag root_path, method: :get, class: "form-home-page" do %>
+  <div id= "search-data" class="form-search search-data" data-products="<%= @products.to_json %>">
+    <%= text_field_tag :query, nil, autocomplete: :off, class: "form-control", placeholder: "What do you need to buy?" %>
+    <%= submit_tag "Search", class: "btn-ghost" %>
+  </div>
+<% end %>
+</div>
+</div>
 
