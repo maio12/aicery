@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :supermarkets
   get 'pages/profile'
 
   devise_for :users
