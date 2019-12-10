@@ -1,0 +1,12 @@
+
+
+<% @lists.each do |list| %>
+<div class="index-list-card">
+  <%= link_to list_path(list) do %>
+  <div class="index-list-card-infos">
+    <p><%= list.name %> </p>
+    <p><%= list.created_at.strftime("%b %d, %Y") %></p>
+  </div>
+</div>
+<% end %>
+<% end %>
