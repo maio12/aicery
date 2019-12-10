@@ -36,6 +36,8 @@ list1 = List.create(user: ginevra, name: "christmas dinner")
 list2 = List.create(user: antonio, name: "yoga diet")
 
 item = Item.create(list: list, quantity: 6, bought: false, product: product3)
+item4 = Item.create(list: list, quantity: 3, bought: false, product: product6)
+item5 = Item.create(list: list, quantity: 10, bought: false, product: product1)
 item = Item.create(list: list, quantity: 6, bought: false, product: product1)
 item = Item.create(list: list, quantity: 6, bought: false, product: product2)
 item1 = Item.create(list: list1, quantity: 3, bought: false, product: product2)

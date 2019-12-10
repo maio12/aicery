@@ -1,0 +1,19 @@
+<div class="container-show-page">
+  <div class="col-sm-12 col-md-6">
+    <div class="container-show-page-title">
+    <h1><%= @list.name.capitalize %></h1>
+    <p><%= @list.created_at.strftime("%B %d, %Y") %></>
+    <hr>
+    </div>
+
+      <% @list.items.each do |x| %>
+        <div class="card-product-infos-show-page">
+          <div class="quantity-and-name-items-show-page">
+          <p><%= x.quantity %>x
+          <%= x.product.name %></p>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
