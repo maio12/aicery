@@ -1,0 +1,43 @@
+
+.index-list-card{
+  overflow: hidden;
+  height: 87px;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  width: 414px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.index-list-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.index-list-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.index-list-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.index-list-card .index-list-card-infos {
+  padding: 16px;
+  height: 87px;
+  width: 414px;
+}
+
+.index-list-card a {
+  text-decoration: none;
+  color: inherit;
+}
