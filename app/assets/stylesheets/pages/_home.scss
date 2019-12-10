@@ -14,7 +14,7 @@
   opacity: 1;
 }
 
-.bar {
+#search-data {
   margin-top: 40px;
   display: flex;
   justify-content: space-around;
@@ -23,6 +23,8 @@
 .container-home-page {
   height: 900px;
   width: 400px;
+  display: flex;
+  justify-content: center;
 }
 
 .form-home-page {
