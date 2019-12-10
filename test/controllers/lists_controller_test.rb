@@ -5,6 +5,15 @@ class ListsControllerTest < ActionDispatch::IntegrationTest
     get lists_show_url
     assert_response :success
   end
+  test "should get edit" do
+    get lists_edit_url
+    assert_response :success
+  end
+
+  test "should get update" do
+    get lists_update_url
+    assert_response :success
+  end
   # test "the truth" do
   #   assert true
   # end
