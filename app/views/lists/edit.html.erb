@@ -1,0 +1,48 @@
+<!-- <div class="card-edit">
+  <div class="card-edit1">
+    <img src="https://ilfattoalimentare.it/wp-content/uploads/2013/12/0013564.jpg" alt="">
+    <div class="card-edit-text">
+      <h3>Fusilli De Cecco</h3>
+      <p>500g</p>
+    </div>
+  </div>
+
+  <div class="card-edit2">
+    <div class="card-edit-btn">
+      <p>-</p>
+    </div>
+    <div class="card-edit-number">
+      <p>1</p>
+    </div>
+    <div class="card-edit-btn">
+      <p>+</p>
+    </div>
+  </div>
+
+</div> -->
+
+  <% @list.products.each do |product| %>
+<div class="card-edit">
+
+    <div class="card-edit1">
+      <%= image_tag product.photo %>
+      <div class="card-edit-text">
+        <h3><%= product.name %></h3>
+        <p><%= "#{product.quantity} #{product.unit}" %></p>
+      </div>
+    </div>
+
+    <div class="card-edit2">
+      <div class="card-edit-btn">
+        <p>-</p>
+      </div>
+      <div class="card-edit-number">
+        <p>1</p>
+      </div>
+      <div class="card-edit-btn">
+        <p>+</p>
+      </div>
+    </div>
+
+</div>
+  <% end %>
