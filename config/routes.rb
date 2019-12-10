@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'lists/show'
+  get 'pages/profile'
   devise_for :users
   root to: 'pages#home'
   resources :lists, only: [:edit, :show, :index]

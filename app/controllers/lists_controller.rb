@@ -16,6 +16,7 @@ class ListsController < ApplicationController
 #   def list_params
 #     params.require(:list).permit(:name)
 #   end
+
   def index
     @lists = current_user.lists
   end
