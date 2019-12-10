@@ -1,0 +1,41 @@
+.navbar-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  height: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #F5F5F5;
+}
+.navbar-bottom .navbar-btn {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.navbar-bottom .navbar-btn .navbar-btn1 {
+  margin-left: 10px;
+}
+
+.navbar-bottom .navbar-btn .navbar-btn3 {
+  margin-right: 10px;
+}
+
+.navbar-bottom p {
+  color: #00918E;
+  font-family: Montserrat;
+  font-size: 13px;
+}
+
+.fa-home:before {
+  color: #00918E;
+}
+
+.fa-list-ul:before {
+  color: #00918E;
+}
+
+.fa-user:before {
+  color: #00918E;
+}
