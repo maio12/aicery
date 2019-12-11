@@ -1,33 +1,6 @@
 
-<% @list.products.each do |product| %>
-  <div class="card-edit">
-
-    <div class="card-edit1">
-      <%= image_tag product.photo %>
-      <div class="card-edit-text">
-        <h3><%= product.name %></h3>
-        <p><%= "#{product.quantity} #{product.unit}" %></p>
-      </div>
-    </div>
-
-    <% item = Item.find_by(product: product, list: @list) %>
-
-    <div class="card-edit2">
-
-      <div class="card-edit-btn">
-        <%= button_to '-', list_item_minus_path(@list, item), method: :patch %>
-      </div>
-
-      <div class="card-edit-number">
-        <p><%= item.quantity %></p>
-      </div>
-
-      <div class="card-edit-btn">
-        <%= button_to '+', list_item_plus_path(@list, item), method: :patch %>
-      </div>
-    </div>
-
-  </div>
+<% @list.items.order(created_at: :asc).each do |item| %>
+  <%= render item %>
 <% end %>
 
 <div class="list-edit-bottom">

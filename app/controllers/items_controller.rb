@@ -1,19 +1,30 @@
 class ItemsController < ApplicationController
-  def update_plus
-    @item = Item.find(params[:id])
-    @item.quantity += 1
-    @item.save
-    redirect_to edit_list_path(@item.list)
+  def plus
+    @item = Item.find(params[:item_id])
+    amount = @item.quantity + 1
+    @item.update(quantity: amount)
+
+    respond_to do |format|
+      format.js
+      format.html { redirect_to edit_list_path(@item.list) }
+    end
   end
 
-  def update_minus
-    @item = Item.find(params[:id])
-    if @item.quantity.zero?
+  def minus
+    @item = Item.find(params[:item_id])
+    list = @item.list
+
+    if @item.quantity == 1
+      @item.quantity -= 1
       @item.delete
     else
-      @item.quantity -= 1
+      amount = @item.quantity - 1
+      @item.update(quantity: amount)
     end
-    @item.save
-    redirect_to edit_list_path(@item.list)
+
+    respond_to do |format|
+      format.js
+      format.html { redirect_to edit_list_path(list) }
+    end
   end
 end
