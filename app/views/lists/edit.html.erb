@@ -10,15 +10,20 @@
       </div>
     </div>
 
+    <% item = Item.find_by(product: product, list: @list) %>
+
     <div class="card-edit2">
+
       <div class="card-edit-btn">
-        <p>-</p>
+        <%= button_to '-', list_item_minus_path(@list, item), method: :patch %>
       </div>
+
       <div class="card-edit-number">
-        <p>1</p>
+        <p><%= item.quantity %></p>
       </div>
+
       <div class="card-edit-btn">
-        <p>+</p>
+        <%= button_to '+', list_item_plus_path(@list, item), method: :patch %>
       </div>
     </div>
 

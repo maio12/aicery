@@ -72,39 +72,42 @@
   justify-content: space-between;
   align-items: center;
   background: white;
-  height: 70px;
+  height: 90px;
   position: fixed;
-  bottom: 72px;
+  bottom: 69px;
   border-top: 1px solid #F5F5F5;
+  border-bottom: 1px solid #F5F5F5;
   padding: 10px;
 }
 
-// .list-edit-bottom .edit-btn1 {
-//   margin-top: 10px;
-//   margin-left: 15px;
-//   background: #FCC72C;
-//   border-radius: 4px;
-//   height: 60px;
-//   width: 60%;
-//   margin-bottom: 10px;
-// }
-
-// .list-edit-bottom .edit-btn2 {
-//   margin-top: 10px;
-//   margin-right: 15px;
-//   background: #FCC72C;
-//   border-radius: 4px;
-//   height: 60px;
-//   width: 30%;
-//   margin-bottom: 10px;
-// }
-
-
 .edit-btn1 {
   font-family: Montserrat;
-  padding: 15px 45px;
+  padding: 20px 65px;
   background: #FCC72C;
   color: white;
   border-radius: 4px;
   font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+
+.edit-btn2 {
+  font-family: Montserrat;
+  padding: 15px 29px;
+  background: white;
+  color: #4A4A4A;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button, input {
+  color: white;
+  font-size: 26px;
 }
