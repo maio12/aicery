@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     list = List.find(current_user.current_list_id)
     list.update(name: 'Your list')
     @item = Item.create(list: list, product: product)
-    redirect_to edit_list_path(list)
+    redirect_to root_path
   end
 
   def plus

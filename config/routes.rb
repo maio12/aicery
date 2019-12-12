@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     patch :plus
     patch :minus
   end
+
+  resource :search, only: :show
 end
