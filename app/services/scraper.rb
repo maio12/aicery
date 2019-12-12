@@ -1,10 +1,6 @@
-require "nokogiri"
 require "httparty"
-require "json"
-require "pry"
 
-
-def scrape_craiglist_antiques(page)
+def scrape_craiglist_antiques(_page)
   array = []
   html_content = open("https://www.miaspesa.it/?page=1").read
   doc = Nokogiri::HTML(html_content)
@@ -22,18 +18,18 @@ end
 #   @parse_page = Nokogiri::HTML(doc)
 # end
 
-  # def self.scraping_apartments(id)
-  #     url = "https://www.airbnb.com/s/#{city}--#{country}/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJw0rXGxGKJRMRAIE4sppPCQM&source=mc_search_bar&search_type=section_navigation&screen_size=large&adults=1"
-  #     response = HTTParty.get(url)
-  #     parsed_response = Nokogiri::HTML(response.body)
+# def self.scraping_apartments(id)
+#     url = "https://www.airbnb.com/s/#{city}--#{country}/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJw0rXGxGKJRMRAIE4sppPCQM&source=mc_search_bar&search_type=section_navigation&screen_size=large&adults=1"
+#     response = HTTParty.get(url)
+#     parsed_response = Nokogiri::HTML(response.body)
 
-  #      parsed_response.css("a").each do |element|
-  #          el = Nokogiri::HTML(HTTParty.get("https://www.airbnb.com/#{element.attributes["href"].value}"))
-  #          el.css("img").each do |image|
-  #             p image.attributes["src"].value
-  #         end
-  #      end
-  # end
+#      parsed_response.css("a").each do |element|
+#          el = Nokogiri::HTML(HTTParty.get("https://www.airbnb.com/#{element.attributes["href"].value}"))
+#          el.css("img").each do |image|
+#             p image.attributes["src"].value
+#         end
+#      end
+# end
 
 # def self.api_apartments_address
 # url_address = "https://raw.githubusercontent.com/EthanRBrown/rrad/master/addresses-us-100.json"
