@@ -1,0 +1,28 @@
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 250px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+<br>
+
+<div class="show-card">
+  <h3>Cheapest Deal</h3>
+  <div class="buttons_map">
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+  </div>
+</div>
+<br>
+
+<div class="show-card">
+  <h3>Nearest Deal</h3>
+  <div class="buttons_map">
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+  </div>
+</div>
