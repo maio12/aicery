@@ -6,4 +6,6 @@ class Product < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+  #@products = Product.pluck(:name).sort
+  mount_uploader :photo, PhotoUploader
 end
