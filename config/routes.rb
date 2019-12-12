@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :lists, only: [:edit, :show, :index] do
 
-    resources :checkouts, only: [:show]
+    resources :checkouts, only: [:index]
   end
 
   resources :items, only: :update do
