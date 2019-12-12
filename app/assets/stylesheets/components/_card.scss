@@ -1,37 +1,47 @@
-.card-product-infos-show-page {
-  align-items: center;
-// flex-direction: column;
-margin-top: 64px;
-margin-bottom: 64px;
-width: 320px;
-height: 87px;
-left: 0px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-}
+// .card-product-infos-show-page {
+//   align-items: center;
+// // flex-direction: column;
+// margin-top: 64px;
+// margin-bottom: 64px;
+// width: 320px;
+// height: 87px;
+// left: 0px;
+// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+// }
 
 .card-profile {
-// position: absolute;
-width: 414px;
-height: 87px;
-left: 0px;
-top: 315px;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: column;
-justify-content: center;
-text-align: left;
-color: #4A4A4A;
-margin: 0 auto;
-font-family: Montserrat;
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 22px;
-background-color: #FFFFFF;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px 10px;
+  margin-top: 5px;
 }
 
-body {
-  background-color: #FFFFFF;
+.card-profile p {
+  font-family: Montserrat;
+  color: #4A4A4A;
+  font-size: 18px;
+  font-weight: normal;
+  margin-left: 15px;
+  margin-top: 2px;
+}
+
+.card-profile .fa-user:before {
+  color: #4A4A4A;
+  font-size: 25px;
+}
+
+.fa-cart-plus:before {
+  color: #4A4A4A;
+  font-size: 25px;
+}
+
+.fa-sign-out-alt:before {
+  color: #4A4A4A;
+  font-size: 25px;
+}
+
+.card-profile a {
+  display: flex;
 }
 
 
