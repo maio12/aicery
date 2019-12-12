@@ -13,7 +13,10 @@ const autocompleteSearch = function() {
       source: function(term, suggest){
         console.log("searching")
           term = term.toLowerCase();
-          const choices = products;
+          const productsArray = Array.from(products, x => x[0]);
+          console.log(productsArray);
+          const choices = productsArray;
+
           const matches = [];
           for (let i = 0; i < choices.length; i++)
               if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);

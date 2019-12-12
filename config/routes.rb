@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'items/create'
   get 'pages/profile'
   devise_for :users
   root to: 'pages#home'
