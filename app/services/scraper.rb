@@ -64,6 +64,3 @@ end
 #     end
 #     return array
 # end
-
-
-end
