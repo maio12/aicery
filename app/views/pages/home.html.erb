@@ -9,11 +9,12 @@
     <br>
     <%  @products.each do |product| %>
     <div class="card-product-home-page">
-      <%= content_tag(product.photo) %>
+      <%= image_tag(product.photo) %>
       <%= product.name %>
       <%= product.quantity %>
       <% end %>
     </div>
+    <%= submit_tag "Search", class: "btn-ghost" %>
   </div>
 </div>
 
