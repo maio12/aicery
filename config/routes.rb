@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :supermarkets
   get 'pages/profile'
   devise_for :users
   root to: 'pages#home'
-  resources :lists, only: [:edit, :show, :index]
+  resources :lists, only: [:edit, :show, :index] do
+    resources :checkouts, only: [:show]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
