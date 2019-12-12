@@ -3,14 +3,22 @@
   width: 400px;
 }
 
-.quantity-and-name-items-show-page {
-  display:flex;
-  align-items: center;
-  margin-left: 16px;
-}
+// .quantity-and-name-items-show-page {
+//   display:flex;
+//   align-items: center;
+//   margin-left: 16px;
+// }
 
 .container-show-page-title {
   margin-top: 32px;
   margin-left: 8px;
 }
 
+.quantity-and-name-items-show-page {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}

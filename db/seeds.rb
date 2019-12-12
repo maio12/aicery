@@ -14,11 +14,11 @@ Item.destroy_all
 User.destroy_all
 
 
-product6 = Product.create(name: "Uova Fresche Bio Categoria a 100 Uova Italiane", brand: "Lidl", quantity: 6, unit: 'pz', price: 200, photo: 'http://public.citre.com/wp/wp-content/uploads/2018/02/newsuovabio.jpg' )
-product1 = Product.create(name: "Carote", brand: "Eurospin", quantity: 1000, unit: 'g', price: 100, photo: 'https://www.supermercato24.it/asset/smhd/39733/ad654/64e66/162001883404920384_img.jpg')
-product2 = Product.create(name: "Maltagliati 189 Pasta All'uovo", brand: "EasyCoop", quantity: 250, unit: 'g', price: 200, photo: 'https://k.nooncdn.com/t_desktop-pdp-v1/v1551877899/N21194518A_1.jpg' )
-product3 = Product.create(name: "Barilla spaghetti integrale", brand: "Barilla", quantity: 400, unit: 'g', price: 139, photo:'https://images-eu.ssl-images-amazon.com/images/I/51rrXPIo9UL._SS510_.jpg')
-product4 = Product.create(name: "Mirtilli freschi", brand: "Carrefour", quantity: 300, unit: 'g', price: 300, photo:'https://www.aliperme.it/photo/2018/01/10/0/main/photo/0000427_A_1_A.jpg')
+product6 = Product.create(name: "Uova Fresche Bio Categoria a 100 Uova Italiane", brand: "Lidl", quantity: 6, unit: 'pz', base_price: 200, photo: 'http://public.citre.com/wp/wp-content/uploads/2018/02/newsuovabio.jpg' )
+product1 = Product.create(name: "Carote", brand: "Eurospin", quantity: 1000, unit: 'g', base_price: 100, photo: 'https://www.supermercato24.it/asset/smhd/39733/ad654/64e66/162001883404920384_img.jpg')
+product2 = Product.create(name: "Maltagliati 189 Pasta All'uovo", brand: "EasyCoop", quantity: 250, unit: 'g', base_price: 200, photo: 'https://k.nooncdn.com/t_desktop-pdp-v1/v1551877899/N21194518A_1.jpg' )
+product3 = Product.create(name: "Barilla spaghetti integrale", brand: "Barilla", quantity: 400, unit: 'g', base_price: 139, photo:'https://images-eu.ssl-images-amazon.com/images/I/51rrXPIo9UL._SS510_.jpg')
+product4 = Product.create(name: "Mirtilli freschi", brand: "Carrefour", quantity: 300, unit: 'g', base_price: 300, photo:'https://www.aliperme.it/photo/2018/01/10/0/main/photo/0000427_A_1_A.jpg')
 
 
 gregory = User.create(first_name: "Gregory", last_name: "Conti", email: "gregory@conti.com", password: "nailingit")

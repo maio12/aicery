@@ -13,7 +13,7 @@
       <%= product.name %>
       <%= product.quantity %>
       <%# link_to "Search", {:controller => "items", :action => "create", :product => product}, {:method => :post, :class => "new_link"}  %>
-      <%= link_to "Search", items_path(product: product), method: :post,  class: "btn-ghost" %>
+      <%= link_to "Add", items_path(product: product), method: :post,  class: "btn-ghost" %>
       <% end %>
     </div>
   </div>
