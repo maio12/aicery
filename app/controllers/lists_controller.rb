@@ -5,6 +5,11 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
+
+    respond_to do |format|
+    format.js
+    format.html
+end
   end
 
   # def update
