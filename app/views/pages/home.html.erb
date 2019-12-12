@@ -12,9 +12,10 @@
       <%= image_tag(product.photo) %>
       <%= product.name %>
       <%= product.quantity %>
+      <%# link_to "Search", {:controller => "items", :action => "create", :product => product}, {:method => :post, :class => "new_link"}  %>
+      <%= link_to "Search", items_path(product: product), method: :post,  class: "btn-ghost" %>
       <% end %>
     </div>
-    <%= submit_tag "Search", class: "btn-ghost" %>
   </div>
 </div>
 

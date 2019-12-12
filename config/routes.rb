@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'items/create'
   get 'pages/profile'
   devise_for :users
   root to: 'pages#home'
@@ -8,7 +7,7 @@ Rails.application.routes.draw do
     resources :checkouts, only: [:index]
   end
 
-  resources :items, only: :update do
+  resources :items, only: [:update, :create] do
     patch :plus
     patch :minus
   end
