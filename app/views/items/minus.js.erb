@@ -1,0 +1,8 @@
+var el = document.getElementById('item_' + '<%= @item.id %>')
+
+<% if @item.quantity.zero? %>
+  el.remove()
+<% else %>
+  el.outerHTML = '<%= j render @item %>'
+<% end %>
+
