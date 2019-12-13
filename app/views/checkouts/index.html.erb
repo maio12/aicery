@@ -11,8 +11,8 @@
 <div class="show-card">
   <h3>Cheapest Deal</h3>
   <div class="buttons_map">
-    <div class="buttons_inside_map"></div>
-    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"><%= @list.first.supermarkets_by_total_matches.first.name %></div>
+    <div class="buttons_inside_map"><%= @list.first.supermarkets_by_total_matches.first.basket_total_price(@product_ids) %></div>
     <div class="buttons_inside_map"></div>
   </div>
 </div>
@@ -21,8 +21,10 @@
 <div class="show-card">
   <h3>Nearest Deal</h3>
   <div class="buttons_map">
-    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"><%= @list.first.supermarkets_by_total_price.first.name%> </div>
     <div class="buttons_inside_map"></div>
     <div class="buttons_inside_map"></div>
   </div>
 </div>
+
+
