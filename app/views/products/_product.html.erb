@@ -1,6 +1,6 @@
 <div class="card-product-home-page" data-target="autocomplete.results">
   <%= image_tag(product.photo) %>
-  <%= product.name %>
+  <%= product.name.split[0..6].join(' ') %>
   <%= product.quantity %>
   <%= product.unit %>
   <%= product.brand %>
