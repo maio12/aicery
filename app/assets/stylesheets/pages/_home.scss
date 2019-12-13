@@ -1,18 +1,21 @@
-// Specific CSS for your home-page
-.btn-ghost {
-  width: 104px;
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
-  margin-left: 16px;
+.home-btn {
+  background: #FCC72C;
   font-size: 16px;
+  border-radius: 4px;
+  height: 38px;
+  font-family: Montserrat;
 }
 
-.btn-ghost:hover {
-  opacity: 1;
+.form-control {
+  width: 375px;
+}
+
+.product_btn {
+  background: #FCC72C;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-right: 10px;
 }
 
 #search-data {
@@ -23,8 +26,6 @@
 }
 
 .container-home-page {
-  height: 900px;
-  width: 400px;
   display: flex;
   justify-content: center;
 }
@@ -40,12 +41,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  color: #4A4A4A
 }
 
 .card-product-home-page img {
   height: 100%;
-  width: 120px;
+  width: 95px;
   object-fit: cover;
+  margin-right: 10px;
 }
 
 .card-product h2 {
@@ -62,9 +65,6 @@
   margin-top: 8px;
 }
 
-.card-product-home-page {
-  padding: 16px;
-}
 .hide {
   visibility: hidden;
 }
