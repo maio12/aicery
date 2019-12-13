@@ -1,6 +1,12 @@
 <div class="navbar-aicery">
-  <a class="navbar-arrow" href="#"><i class="fas fa-arrow-left"></i></a>
+  <%= link_to url_for(:back) do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
   <p>My Cart</p>
-  <a href="#"><i class="fas fa-shopping-cart"></i></a>
+  <%= link_to edit_list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p><%= current_user.lists.last.items.count if current_user.lists.last.items.count > 0 %></p>
+ <% end %>
 </div>
+
 

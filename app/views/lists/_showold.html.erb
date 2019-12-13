@@ -1,0 +1,27 @@
+<div class="navbar-aicery">
+  <%= link_to url_for(:back) do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  <p>List Details</p>
+  <%= link_to edit_list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+  <% end %>
+</div>
+
+<div class="container-show-page">
+
+<div class="container-show-page-title">
+  <h3><%= @list.name.capitalize %> </h3>
+  <p><%= @list.created_at.strftime("%b %d, %Y") %></p>
+</div>
+
+    <% @list.items.each do |x| %>
+      <div class="card-product-infos-show-page">
+          <p class="quantity"><%= "#{x.quantity} x " %></p>
+          <p class="name"><%= x.product.name %></p>
+      </div>
+    <% end %>
+
+</div>
+

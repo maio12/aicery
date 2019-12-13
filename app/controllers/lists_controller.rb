@@ -1,4 +1,8 @@
 class ListsController < ApplicationController
+  def index
+    @lists = current_user.lists
+  end
+
   def show
     @list = List.find(params[:id])
   end
@@ -12,19 +16,15 @@ class ListsController < ApplicationController
     end
   end
 
-  # def update
-  #   @list = List.find(params[:id])
-  #   @list.update(list_params)
-  #   redirect_to
-  # end
+  def update
+    @list = List.find(params[:id])
+    @list.update(list_params)
+    redirect_to edit_list_path
+  end
 
-  # private
+  private
 
-  #   def list_params
-  #     params.require(:list).permit(:name)
-  #   end
-
-  def index
-    @lists = current_user.lists
+  def list_params
+    params.require(:list).permit(:name)
   end
 end
