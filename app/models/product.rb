@@ -6,7 +6,13 @@ class Product < ApplicationRecord
                     [:name, 'A'],
                     [:brand, 'B']
                   ],
-                  using: {tsearch: { prefix: true, normalization: 2 } }
+                  using: {tsearch: { prefix: true, normalization: 2 }
+
+                  # trigram: {
+                  #   word_similarity: true
+                  # }
+
+                }
 
   # @products = Product.pluck(:name).sort
   # mount_uploader :photo, PhotoUploader

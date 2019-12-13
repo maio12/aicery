@@ -11,7 +11,9 @@ export default class extends Controller {
     console.log(this.query)
     fetch(`${this.url}?query=${this.query}`)
       .then(response => response.json())
+
       .then(products => {
+
         this.results.innerHTML = products.join('');
       });
   }
@@ -26,5 +28,6 @@ export default class extends Controller {
 
   get results() {
     return this.resultsTarget;
+
   }
 }
