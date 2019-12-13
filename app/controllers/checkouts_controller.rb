@@ -1,5 +1,5 @@
 class CheckoutsController < ApplicationController
-  def index
+  def show
     @supermarkets = Supermarket.geocoded # returns flats with coordinates
 
     @markers = @supermarkets.map do |supermarket|
@@ -10,6 +10,12 @@ class CheckoutsController < ApplicationController
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
+
+      # @list = List.find(params[:list_id])
+      @list = current_user.lists
+
+      @supermarkets = @list.first.supermarkets_by_total_matches.take(3)
+      @product_ids = @list.first.products.pluck(:id)
   end
 end
 
