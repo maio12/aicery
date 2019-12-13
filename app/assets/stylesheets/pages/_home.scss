@@ -1,13 +1,14 @@
 // Specific CSS for your home-page
 .btn-ghost {
+  width: 104px;
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
-  padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin-left: 16px;
+  font-size: 16px;
 }
 
 .btn-ghost:hover {
@@ -17,6 +18,7 @@
 #search-data {
   margin-top: 40px;
   display: flex;
+  height: 40px;
   justify-content: space-around;
 }
 
@@ -31,6 +33,38 @@
   display: flex;
 }
 
+.card-product-home-page {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product-home-page img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product-home-page {
+  padding: 16px;
+}
 .hide {
   visibility: hidden;
 }

@@ -14,11 +14,6 @@ class ListsController < ApplicationController
       format.js
       format.html
     end
-
-    # @count = []
-
-
-
   end
 
   def update

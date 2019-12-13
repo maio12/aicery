@@ -26,6 +26,21 @@
   display: flex;
 }
 
+.quantity-and-name-items-show-page {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.quantity-and-name-items-show-page img {
+ height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
+
 .card-product-infos-show-page .quantity {
   color: #B4B4B4;
   font-size: 18px;
@@ -38,3 +53,4 @@
   font-family: Montserrat;
   margin-left: 10px;
 }
+
