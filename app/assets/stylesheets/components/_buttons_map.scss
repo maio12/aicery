@@ -1,0 +1,46 @@
+
+.show-card {
+width: 100vw;
+height: 100px;
+left: 14px;
+top: 455px;
+background: #FCC72C;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+border-radius: 4px;
+}
+
+.show-card h3 {
+  font-family: Montserrat;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.buttons_map {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.buttons_inside_map {
+width: 96px;
+height: 34px;
+left: 39px;
+top: 519px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 15px;
+text-align: center;
+color: #4A4A4A;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+background-color: white;
+}
+
+.closest {
+  font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+text-align: center;
+}

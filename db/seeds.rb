@@ -47,9 +47,9 @@ products.first(400).each do |row|
     )
 end
 
-supermarket = Supermarket.create(chain: "Carrefour", name: "Carrefour Porta Venezia", address: "Via Gustavo Modena 8")
-supermarket1 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Venezia", address: "Viale Piave, 38B")
-supermarket2 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Venezia", address: "Viale Premuda, 27")
+supermarket = Supermarket.create(chain: "Carrefour", name: "Carrefour Porta Venezia", address: "Via Gustavo Modena 8 Milan")
+supermarket1 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Venezia", address: "Viale Piave, 38B Milan")
+supermarket2 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Venezia", address: "Viale Premuda, 27 Milan")
 
 
 Supermarket.all.each do |supermarket|

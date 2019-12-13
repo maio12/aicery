@@ -93,6 +93,7 @@
 
 .edit-btn2 {
   font-family: Montserrat;
+  font-size: 16px;
   padding: 19px 29px;
   background: white;
   color: #4A4A4A;
@@ -110,3 +111,17 @@ button, input {
   color: white;
   font-size: 26px;
 }
+
+.navbar-aicery .notification {
+  background: #FCC72C;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2px;
+  position: relative;
+  bottom: 15px;
+  right: 20px;
+}
+
+

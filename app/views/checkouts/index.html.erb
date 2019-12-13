@@ -1,0 +1,38 @@
+<div class="navbar-aicery">
+  <%= link_to url_for(:back) do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  <p>My Deals</p>
+  <%= link_to edit_list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+  <% end %>
+</div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 250px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+<br>
+
+<div class="show-card">
+  <h3>Cheapest Deal</h3>
+  <div class="buttons_map">
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+  </div>
+</div>
+<br>
+
+<div class="show-card">
+  <h3>Nearest Deal</h3>
+  <div class="buttons_map">
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+    <div class="buttons_inside_map"></div>
+  </div>
+</div>

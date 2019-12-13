@@ -1,9 +1,18 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="navbar-aicery">
+  <%= link_to url_for(:back) do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  <p>My Personal Details</p>
+  <%= link_to edit_list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+  <% end %>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs edit">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -23,13 +32,11 @@
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions edit">
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<div class="form-input-cancel">
+  <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+</div>

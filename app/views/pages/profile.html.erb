@@ -1,23 +1,31 @@
-<br>
-<body>
-<div class="card-profile">
-  <%= link_to lists_path, :action => 'go' do %>
-  <p>
-<i class="fas fa-cart-plus" style="color:black">
-  Your details
-  </i></p>
-<% end %>
+<div class="navbar-aicery">
+  <%= link_to url_for(:back) do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  <p>My Account</p>
+  <%= link_to edit_list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+  <% end %>
 </div>
-<br>
-<div class="card-profile">
-<%= link_to edit_user_registration_path :action => 'go' do %>
-<p> <i class="fas fa-user" style="color:black"> My Account Details</i></p>
- <% end %>
-</div>
-<br>
-<%= link_to destroy_user_session_path, method: :delete, :action => 'go' do %>
-<div class="card-profile">
-<p><i class="fas fa-sign-out-alt" style="color:black"> Logout</i></p>
-<% end %>
-</div>
-</body>
+
+  <div class="card-profile">
+    <%= link_to edit_user_registration_path :action => 'go' do %>
+      <i class="fas fa-user"></i>
+      <p>My Personal Details</p>
+    <% end %>
+  </div>
+
+  <div class="card-profile">
+    <%= link_to lists_path, :action => 'go' do %>
+      <i class="fas fa-cart-plus"></i>
+      <p>My Saved Lists</p>
+    <% end %>
+  </div>
+
+  <div class="card-profile">
+    <%= link_to destroy_user_session_path, method: :delete, :action => 'go' do %>
+      <i class="fas fa-sign-out-alt"></i>
+      <p>Logout</p>
+    <% end %>
+  </div>
