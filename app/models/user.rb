@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :lists
+  has_many :lists, dependent: :destroy
 
   def current_list
     return nil unless current_list_id
