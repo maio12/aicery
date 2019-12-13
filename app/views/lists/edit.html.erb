@@ -1,3 +1,13 @@
+<div class="navbar-aicery">
+  <%= link_to url_for(:back) do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  <p>My Cart</p>
+  <%= link_to edit_list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+  <% end %>
+</div>
 
 <% @list.items.order(created_at: :asc).each do |item| %>
   <%= render item %>
@@ -5,5 +15,27 @@
 
 <div class="list-edit-bottom">
       <a href="#" class="edit-btn1">My Deals</a>
-      <a href="#" class="edit-btn2">Save List</a>
+      <button type="button" class="edit-btn2" data-toggle="modal" data-target="#exampleModal">Save List</button>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Name your list</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@list] do |form| %>
+          <%= form.input :name, label: false %>
+      </div>
+      <div class="modal-footer">
+          <%= form.submit 'Save List', class: "btn btn-primary" %>
+        <% end %>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
