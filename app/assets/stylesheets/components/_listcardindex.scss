@@ -1,42 +1,18 @@
-
-.index-list-card{
-  overflow: hidden;
-  height: 87px;
+.index-list-card {
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  width: 414px;
-  margin-top: 40px;
+  padding: 10px 10px 10px 10px;
+  margin-top: 5px;
 }
 
-.index-list-card img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.index-list-card h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+.index-list-card h3 {
+  font-family: Montserrat;
+  color: #4A4A4A;
+  font-size: 18px;
 }
 
 .index-list-card p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.index-list-card .index-list-card-infos {
-  padding: 16px;
-  height: 87px;
-  width: 414px;
-}
-
-.index-list-card a {
-  text-decoration: none;
-  color: inherit;
+  font-family: Montserrat;
+  color: #B4B4B4;
+  font-size: 15px;
 }

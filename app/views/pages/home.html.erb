@@ -1,3 +1,12 @@
+<div class="navbar-aicery">
+  <i class="fas fa-arrow-left hide"></i>
+  <p>Aicery</p>
+   <%= link_to edit_list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+  <% end %>
+</div>
+
 <div class="container-home-page">
 <div class="bar">
 <%= form_tag root_path, method: :get, class: "form-home-page" do %>
