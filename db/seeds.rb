@@ -31,11 +31,11 @@ User.destroy_all
 # product12 = Product.create(name: "Scottilete Classic", brand: "Scottilete", quantity: 400, unit: 'g', price: 259)
 # product13 = Product.create(name: "Prosciuto Cotto di Alta Qualita", brand: "Carrefour", quantity: 150, unit: 'g', price: 249)
 
-product6 = Product.create(name: "Uova Fresche Bio Categoria a 100 Uova Italiane", brand: "Lidl", quantity: 6, unit: 'pz', base_price: 200, photo: 'http://public.citre.com/wp/wp-content/uploads/2018/02/newsuovabio.jpg' )
-product1 = Product.create(name: "Carote", brand: "Eurospin", quantity: 1000, unit: 'g', base_price: 100, photo: 'https://www.supermercato24.it/asset/smhd/39733/ad654/64e66/162001883404920384_img.jpg')
-product2 = Product.create(name: "Maltagliati 189 Pasta All'uovo", brand: "EasyCoop", quantity: 250, unit: 'g', base_price: 200, photo: 'https://k.nooncdn.com/t_desktop-pdp-v1/v1551877899/N21194518A_1.jpg' )
-product3 = Product.create(name: "Barilla spaghetti integrale", brand: "Barilla", quantity: 400, unit: 'g', base_price: 139, photo:'https://images-eu.ssl-images-amazon.com/images/I/51rrXPIo9UL._SS510_.jpg')
-product4 = Product.create(name: "Mirtilli freschi", brand: "Carrefour", quantity: 300, unit: 'g', base_price: 300, photo:'https://www.aliperme.it/photo/2018/01/10/0/main/photo/0000427_A_1_A.jpg')
+# product6 = Product.create(name: "Uova Fresche Bio Categoria a 100 Uova Italiane", brand: "Lidl", quantity: 6, unit: 'pz', base_price: 200, photo: 'http://public.citre.com/wp/wp-content/uploads/2018/02/newsuovabio.jpg' )
+# product1 = Product.create(name: "Carote", brand: "Eurospin", quantity: 1000, unit: 'g', base_price: 100, photo: 'https://www.supermercato24.it/asset/smhd/39733/ad654/64e66/162001883404920384_img.jpg')
+# product2 = Product.create(name: "Maltagliati 189 Pasta All'uovo", brand: "EasyCoop", quantity: 250, unit: 'g', base_price: 200, photo: 'https://k.nooncdn.com/t_desktop-pdp-v1/v1551877899/N21194518A_1.jpg' )
+# product3 = Product.create(name: "Barilla spaghetti integrale", brand: "Barilla", quantity: 400, unit: 'g', base_price: 139, photo:'https://images-eu.ssl-images-amazon.com/images/I/51rrXPIo9UL._SS510_.jpg')
+# product4 = Product.create(name: "Mirtilli freschi", brand: "Carrefour", quantity: 300, unit: 'g', base_price: 300, photo:'https://www.aliperme.it/photo/2018/01/10/0/main/photo/0000427_A_1_A.jpg')
 
 
 
@@ -44,10 +44,10 @@ path = "products.json"
 serialized_products = File.read(path)
 products = JSON.parse(serialized_products)
 
-products.first(400).each do |row|
+products.first(350).each do |row|
   Product.create!(
     name: row["name"],
-    price: row["base_price"].to_f * 100,
+    base_price: row["base_price"].to_f * 100,
     brand: row["brand"],
     photo: row["photo"],
     quantity: row["weight"],
@@ -58,30 +58,31 @@ end
 supermarket = Supermarket.create(chain: "Carrefour", name: "Carrefour Porta Venezia", address: "Via Gustavo Modena 8 Milan")
 supermarket1 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Venezia", address: "Viale Piave, 38B Milan")
 supermarket2 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Venezia", address: "Viale Premuda, 27 Milan")
+supermarket3 = Supermarket.create(chain: "Carrefour", name: "Carrefour Duomo", address: "Piazza Santo Stefano, 6, 20122 Milano")
+supermarket4 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Romana", address: " Via Giovanni Cena, 8, 20135 Milano")
+supermarket5 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Romana", address: "Via Lodovico Muratori, 27/29, 20135 Milano")
+
 
 
 Supermarket.all.each do |supermarket|
-  rand(10..20).times do |i|
+  rand(400..600).times do |i|
     percentage = 0
     while percentage == 0
       percentage = rand(-0.2..0.2)
     end
     product = Product.all.sample
 
-    base_price = product.price
+    base_price = product.base_price
     price = (rand(-0.2..0.2) + 1) * base_price
 
     # base_price * 0.1
     # price
 
-    Inventory.create!(supermarket: supermarket, product: product)
+    Inventory.create!(supermarket: supermarket, product: product, price: price)
   rescue ActiveRecord::RecordInvalid
     next
   end
 end
-
-
-
 
 
 gregory = User.create(first_name: "Gregory", last_name: "Conti", email: "gregory@conti.com", password: "nailingit")
