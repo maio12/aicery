@@ -1,7 +1,7 @@
 <div class="container-show-page">
   <div class="col-sm-12 col-md-6">
     <div class="container-show-page-title">
-      <h1><%= @list.name.capitalize %></h1>
+      <h1><%= @list.name.present? ? @list.name.capitalize : 'My List' %></h1>
       <p><%= @list.created_at.strftime("%B %d, %Y") %></>
         <hr>
       </div>

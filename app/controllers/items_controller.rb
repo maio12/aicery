@@ -1,9 +1,12 @@
 class ItemsController < ApplicationController
   def create
     product = Product.find(params[:product])
-    list = List.find(current_user.current_list_id)
-    list.update(name: 'Your list')
+
+    list_id = params[:list_id] || current_user.current_list_id
+    list = List.find(list_id)
+    # list.update(name: 'Your list')
     @item = Item.create(list: list, product: product)
+
     redirect_to root_path
   end
 
