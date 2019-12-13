@@ -6,6 +6,7 @@ class Product < ApplicationRecord
                   using: {
                     tsearch: { prefix: true }
                   }
+    monetize :base_price_cents
   # @products = Product.pluck(:name).sort
   # mount_uploader :photo, PhotoUploader
 end

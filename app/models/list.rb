@@ -4,6 +4,9 @@ class List < ApplicationRecord
   has_many :products, through: :items
 
   def basket_price
+    products.each do |quantity|
+      product_id * quantity
+    end
     products.sum(:price)
   end
 
@@ -30,6 +33,6 @@ class List < ApplicationRecord
                .where(inventories: { product_id: ids })
                .group("supermarkets.id")
                .having("count(products.id) > #{ids.size / 2}")
-               .order(Arel.sql("avg(products.price)"))
+               .order(Arel.sql("avg(inventories.price)"))
   end
 end
