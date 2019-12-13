@@ -1,9 +1,9 @@
 <div class="card-product-home-page" data-target="autocomplete.results">
   <%= image_tag(product.photo) %>
-  <%= product.name %>
-  <%= product.quantity %>
-  <%= product.unit %>
+  <%= product.name.split[0..6].join(' ') %>
+  <%#= product.quantity %>
+  <%#= product.unit %>
   <%= product.brand %>
   <%# link_to "Search", {:controller => "items", :action => "create", :product => product}, {:method => :post, :class => "new_link"}  %>
-  <%= link_to "Add", items_path(product: product), method: :post,  class: "btn-ghost" %>
+  <%= link_to "Add", items_path(product: product), method: :post,  class: "product_btn" %>
 </div>

@@ -3,7 +3,7 @@
     <i class="fas fa-arrow-left"></i>
   <% end %>
   <p>My Cart</p>
-  <%= link_to edit_list_path(current_user.lists.last) do %>
+  <%= link_to list_path(current_user.lists.last) do %>
     <i class="fas fa-shopping-cart"></i>
     <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
   <% end %>
@@ -16,9 +16,14 @@
 
 
 <div class="list-edit-bottom">
+<<<<<<< HEAD
 
       <%= link_to "My Deals", list_checkout_path(@list), class: "edit-btn1"  %>
+=======
+       <%= link_to "My Deals", list_checkout_path(@list), class: "edit-btn1"  %>
+>>>>>>> master
       <button type="button" class="edit-btn2" data-toggle="modal" data-target="#exampleModal">Save List</button>
+
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -10,18 +10,54 @@
   right: 20px;
 }
 
-.registration {
-  width: 25%;
-  margin: 0 auto;
+.registration .btn {
+  font-family: Montserrat;
+  background: #FCC72C;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+  width: 210px;
+  margin-left: 80px;
+  margin-bottom: 20px;
 }
 
 h2 {
   margin: 0 auto;
 }
 
-.login {
-  width: 25%;
-  margin: 0 auto;
+.form-actions-login {
+  margin-top: 60px;
+}
+
+.bottoni {
+  text-align: center;
+}
+
+.form-actions-login .bottoni .btn {
+  font-family: Montserrat;
+  background: #FCC72C;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+  width: 210px;
+  margin-left: 12px;
+  margin-bottom: 20px;
+}
+
+.bottoni a {
+  font-family: Montserrat;
+  font-size: 16px;
+  padding: 7px 57px;
+  background: white;
+  color: #4A4A4A;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
 }
 
 h2 {
@@ -43,7 +79,6 @@ h2 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   margin-right: 10px;
 }
-
 .form-input-cancel a {
   font-family: Montserrat;
   font-size: 16px;
@@ -54,5 +89,9 @@ h2 {
   font-weight: bold;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   margin-left: 54px;
+}
+
+.tutto {
+  margin-top: 60px;
 }
 
