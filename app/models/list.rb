@@ -10,7 +10,7 @@ class List < ApplicationRecord
   def supermarkets_by_total_matches
     ids = products.pluck(:id)
     Supermarket.joins(:products)
-               .where(products: { id: ids })
+               .where(inventories: { product_id: ids })
                .group("supermarkets.id")
                .order(Arel.sql("count(supermarkets.id) DESC"))
   end
@@ -18,18 +18,18 @@ class List < ApplicationRecord
   def supermarkets_by_total_price
     ids = products.pluck(:id)
     Supermarket.joins(:products)
-               .where(products: { id: ids })
+               .where(inventories: { product_id: ids })
                .group("supermarkets.id")
                .having("count(products.id) > #{ids.size / 2}")
-               .order(Arel.sql("sum(products.price)"))
+               .order(Arel.sql("sum(inventories.price)"))
   end
 
   def supermarkets_by_average_price
     ids = products.pluck(:id)
     Supermarket.joins(:products)
-               .where(products: { id: ids })
+               .where(inventories: { product_id: ids })
                .group("supermarkets.id")
-               .having("count(supermarkets.id) > #{ids.size / 2}")
+               .having("count(products.id) > #{ids.size / 2}")
                .order(Arel.sql("avg(products.price)"))
   end
 end

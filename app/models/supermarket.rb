@@ -9,16 +9,16 @@ class Supermarket < ApplicationRecord
   end
 
   def basket_total_price(ids)
-    products.where(products: { id: ids })
-          .sum("products.price")
+    inventories.where(inventories: { product_id: ids })
+               .sum("inventories.price")
   end
 
   def basket_average_price(ids)
-    products.where(products: { id: ids })
-          .average("products.price")
+    inventories.where(inventories: { product_id: ids })
+          .average("inventories.price")
   end
 
   def total_matches(ids)
-    products.where(products: { id: ids }).count
+    inventories.where(inventories: { product_id: ids }).count
   end
 end

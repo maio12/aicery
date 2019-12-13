@@ -1,5 +1,5 @@
 class CheckoutsController < ApplicationController
-  def index
+  def show
     @supermarkets = Supermarket.geocoded # returns flats with coordinates
 
     @markers = @supermarkets.map do |supermarket|
