@@ -235,6 +235,7 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
+  nokogiri (>= 1.10.7)
   pg (~> 0.21)
   pg_search (~> 2.3.0)
   pry-byebug
