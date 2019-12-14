@@ -47,7 +47,7 @@ products = JSON.parse(serialized_products)
 products.first(350).each do |row|
   Product.create!(
     name: row["name"],
-    base_price: row["base_price"].to_f * 100,
+    base_price_cents: row["base_price"].to_f * 100,
     brand: row["brand"],
     photo: row["photo"],
     quantity: row["weight"],
@@ -72,13 +72,13 @@ Supermarket.all.each do |supermarket|
     end
     product = Product.all.sample
 
-    base_price = product.base_price
-    price = (rand(-0.2..0.2) + 1) * base_price
+    base_price_cents = product.base_price_cents
+    price_cents = (rand(-0.2..0.2) + 1) * base_price_cents
 
     # base_price * 0.1
     # price
 
-    Inventory.create!(supermarket: supermarket, product: product, price: price)
+    Inventory.create!(supermarket: supermarket, product: product, price_cents: price_cents)
   rescue ActiveRecord::RecordInvalid
     next
   end

@@ -15,14 +15,14 @@ ingredient.each do |ingredient|
   html_doc.search(".c-card").each do |article|
     brand = article.search(".c-card__title_complete").text
     name = article.search(".c-card__description_complete").text.gsub("Carrefour ", "")
-    base_price = article.search(".c-cartbtn").attr('data-prezzo').value
+    base_price_cents = article.search(".c-cartbtn").attr('data-prezzo').value
     photo = article.search(".c-cartbtn").attr('data-image').value
     weight = article.search(".c-cartbtn").attr('data-peso').value
     unit = article.search(".c-cartbtn").attr('data-unit').value
     product = {
       brand: brand,
       name: name,
-      base_price: base_price,
+      base_price_cents: base_price_cents,
       photo: photo,
       weight: weight,
       unit: unit

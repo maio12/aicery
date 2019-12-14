@@ -4,7 +4,7 @@ class List < ApplicationRecord
   has_many :products, through: :items
 
   def basket_price
-    products.sum(:price)
+    products.sum(:base_price_cents)
   end
 
   def supermarkets_by_total_matches
@@ -21,7 +21,7 @@ class List < ApplicationRecord
                .where(inventories: { product_id: ids })
                .group("supermarkets.id")
                .having("count(products.id) > #{ids.size / 2}")
-               .order(Arel.sql("sum(inventories.price)"))
+               .order(Arel.sql("sum(inventories.price_cents)"))
   end
 
   def supermarkets_by_average_price
@@ -30,7 +30,6 @@ class List < ApplicationRecord
                .where(inventories: { product_id: ids })
                .group("supermarkets.id")
                .having("count(products.id) > #{ids.size / 2}")
-               .order(Arel.sql("avg(inventories.price)"))
-
+               .order(Arel.sql("avg(products.base_price_cents)"))
   end
 end
