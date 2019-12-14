@@ -9,12 +9,13 @@ class CheckoutsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { supermarket: supermarket })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
+      # @markers.first(2)
     end
 
-      # @list = List.find(params[:list_id])
+      @list = List.find(params[:list_id])
       @list = current_user.lists
 
-      @supermarkets = @list.first.supermarkets_by_total_matches.take(3)
+      @supermarkets = @list.first.supermarkets_by_total_matches
       @product_ids = @list.first.products.pluck(:id)
   end
 end
