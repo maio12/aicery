@@ -25,7 +25,6 @@ gem 'httparty'
 
 gem 'pg_search', '~> 2.3.0'
 
-gem 'money-rails', '~>1.12'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
