@@ -21,6 +21,12 @@ class CheckoutsController < ApplicationController
       }
     end
   end
+
+   def purchase
+    @list = List.find(params[:list_id])
+    # @list = current_user.lists.last
+    @supermarket = Supermarket.find(params[:supermarket_id])
+  end
 end
 
 # def best_deal

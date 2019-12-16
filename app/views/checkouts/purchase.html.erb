@@ -1,0 +1,39 @@
+<div class="navbar-aicery">
+  <%= link_to url_for(:back) do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  <p>My Cart</p>
+  <%= link_to list_path(current_user.lists.last) do %>
+    <i class="fas fa-shopping-cart"></i>
+    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+  <% end %>
+</div>
+
+<div class="purchase-supermarket">
+  <h3><%= @supermarket.name %></h3>
+  <p><%= @supermarket.address %></p>
+</div>
+
+
+<% @list.items.each do |item| %>
+
+  <% if item.complete? %>
+    <div class="purchase-card">
+      <h3><strike><%= item.name %></strike></h3>
+      <%= link_to item_path(item), method: :patch do %>
+        <i class="fa fa-lg fa-check"></i>
+      <% end %>
+    </div>
+
+  <% else %>
+    <div class="purchase-card">
+      <h3><%= item.name %></h3>
+      <%= link_to item_path(item), method: :patch do %>
+        <i class="fa fa-lg fa-check"></i>
+      <% end %>
+    </div>
+
+  <% end %>
+
+<% end %>
+

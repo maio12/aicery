@@ -10,6 +10,12 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @item = Item.find(params[:id])
+    @item.update(bought: @item.mark_as_complete)
+    redirect_to list_purchases_path(id, supermarket_id)
+  end
+
   def plus
     @item = Item.find(params[:item_id])
     amount = @item.quantity + 1

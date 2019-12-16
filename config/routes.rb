@@ -6,13 +6,12 @@ Rails.application.routes.draw do
 
   resources :lists, only: [:edit, :show, :index, :update] do
     resource :checkout, only: :show
-    get '/checkout/supermarket/:supermarket_id', to: 'supermarket#show'
+    get '/checkout/supermarket/:supermarket_id', to: 'checkouts#purchase', as: :purchases
   end
 
   resources :items, only: [:update, :create] do
     patch :plus
     patch :minus
-    resource :purchase, only: [:show, :update]
   end
 
   resource :search, only: :show
