@@ -21,6 +21,7 @@
       }
     end
   end
+
 end
 
 # def best_deal
