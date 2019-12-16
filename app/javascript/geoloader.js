@@ -1,26 +1,36 @@
-  var body = document.querySelector('body');
+
+document.addEventListener('DOMContentLoaded', (event) => {
+
+  var map = document.getElementById('map');
   var watchId;
+  url = new URL(window.location.href);
 
-  function appendLocation(location, verb) {
+
+    function appendLocation(location, verb) {
     verb = verb || 'updated';
-    var newLocation = document.createElement('p');
-    newLocation.innerHTML = 'Location ' + verb + ': <a href="https://maps.google.com/maps?&z=15&q=' + location.coords.latitude + '+' + location.coords.longitude + '&ll=' + location.coords.latitude + '+' + location.coords.longitude + '" target="_blank">' + location.coords.latitude + ', ' + location.coords.longitude + '</a>';
-    body.appendChild(newLocation);
-    console.log(newLocation);
+    const lat = location.coords.latitude
+    const lng = location.coords.longitude
+    console.log(lat);
+    console.log(lng);
+    url = window.location.href + "?lat=" + lat + "&lng=" + lng ;
+    window.location = url;
   }
-      const button = document.getElementById('askButton');
 
 
 
-if (button) {
+
+
+
+  if ((map) && !(url.searchParams.get('lat'))) {
 
   if ('geolocation' in navigator) {
-      button.addEventListener('click', function () {
-                                    navigator.geolocation.getCurrentPosition(function (location) {
-                                    appendLocation(location, 'fetched');});
-                                    watchId = navigator.geolocation.watchPosition(appendLocation);
-      });
+      navigator.geolocation.getCurrentPosition(function (location) {
+      appendLocation(location, 'fetched');});
+      watchId = navigator.geolocation.watchPosition(appendLocation);
+
     } else {
       target.innerText = 'Geolocation API not supported.';
     }
 }
+
+});

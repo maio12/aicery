@@ -11,15 +11,30 @@ class CheckoutsController < ApplicationController
 
     @supermarkets = [@cheapest, @nearest]
 
+    if params[:lat].present?
+      puts "hello"
+    end
 
     @markers = @supermarkets.map do |supermarket|
       {
         lat: supermarket.latitude,
         lng: supermarket.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { supermarket: supermarket })
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        infoWindow: render_to_string(partial: "info_window", locals: { supermarket: supermarket }),
+        image_url: helpers.asset_url('3915754-48.png')
       }
-      # @markers.first(2)
+    end
+
+    @markers << user_marker
+  end
+
+  private
+
+  def user_marker
+    {}.tap do |hash|
+      hash[:lat] = params[:lat].presence
+      hash[:lng] = params[:lng].presence
+      hash[:image_url] = helpers.asset_url('3915754-48.png')
+    end
   end
 end
 

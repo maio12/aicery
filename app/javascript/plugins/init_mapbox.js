@@ -19,13 +19,13 @@ const addMarkersToMap = (map, markers) => {
       .setPopup(popup)
       .addTo(map);
        const element = document.createElement('div');
-  element.className = 'marker';
-  element.style.backgroundImage = `url('${marker.image_url}')`;
-  element.style.backgroundSize = 'contain';
-  element.style.width = '25px';
-  element.style.height = '25px';
-  });
-};
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.asset_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '25px';
+      element.style.height = '25px';
+      });
+    };
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
