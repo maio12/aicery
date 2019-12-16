@@ -13,6 +13,7 @@ class Product < ApplicationRecord
                   # }
 
                 }
+  monetize :base_price_cents
 
   # @products = Product.pluck(:name).sort
   # mount_uploader :photo, PhotoUploader
