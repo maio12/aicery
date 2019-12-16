@@ -13,7 +13,8 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(bought: @item.mark_as_complete)
-    redirect_to list_purchases_path(id, supermarket_id)
+    @list = List.find(params[:id])
+    redirect_to request.referer
   end
 
   def plus

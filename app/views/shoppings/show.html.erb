@@ -16,24 +16,22 @@
 
 
 <% @list.items.each do |item| %>
-
-  <% if item.complete? %>
-    <div class="purchase-card">
-      <h3><strike><%= item.name %></strike></h3>
-      <%= link_to item_path(item), method: :patch do %>
-        <i class="fa fa-lg fa-check"></i>
-      <% end %>
-    </div>
-
-  <% else %>
-    <div class="purchase-card">
-      <h3><%= item.name %></h3>
-      <%= link_to item_path(item), method: :patch do %>
-        <i class="fa fa-lg fa-check"></i>
-      <% end %>
-    </div>
-
+  <% if @ids_items_supermarkets.include?(item.product_id) %>
+    <% if item.complete? %>
+      <div class="purchase-card">
+        <h3><strike><%= item.name %></strike></h3>
+        <%= link_to item_path(item), method: :patch do %>
+          <i class="fa fa-lg fa-check"></i>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="purchase-card">
+        <h3><%= item.name %></h3>
+        <%= link_to item_path(item), method: :patch do %>
+          <i class="fa fa-lg fa-check"></i>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-
 <% end %>
 
