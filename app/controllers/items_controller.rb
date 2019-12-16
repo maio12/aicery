@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.html { redirect_to edit_list_path(@item.list) }
+      format.html { redirect_to list_path(@item.list) }
     end
   end
 
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.html { redirect_to edit_list_path(list) }
+      format.html { redirect_to list_path(list) }
     end
   end
 end
