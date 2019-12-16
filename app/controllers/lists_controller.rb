@@ -19,8 +19,18 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     @list.update(list_params)
+    @new_list = List.new
+    @new_list.user = current_user
+    @new_list.save
+    current_user.update(current_list_id: @new_list.id)
     redirect_to lists_path
   end
+
+  def create
+    #implement if else logic
+  end
+
+
 
   private
 
