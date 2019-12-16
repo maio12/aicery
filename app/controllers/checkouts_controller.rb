@@ -1,4 +1,4 @@
-class CheckoutsController < ApplicationController
+  class CheckoutsController < ApplicationController
   def show
     @list = current_user.lists.find(params[:list_id])
     @product_ids = @list.products.pluck(:id)
@@ -9,7 +9,7 @@ class CheckoutsController < ApplicationController
 
     @nearest = @supermarkets.fourth # fake nearest
 
-    @supermarkets = [@cheapest, @nearest]
+    @supermarkets = [@cheapest, @nearest].reject(&:nil?)
 
 
     @markers = @supermarkets.map do |supermarket|

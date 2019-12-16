@@ -8,9 +8,14 @@ class Supermarket < ApplicationRecord
     @supermarkets = Supermarket.near([params.fetch(:lng){ 0 }, params.fetch(:lat){ 0 }], params.fetch(:radius){ 20 })
   end
 
-  def basket_total_price(ids)
-    total = inventories.where(inventories: { product_id: ids })
-                       .sum("inventories.price_cents")
+  # basket is an array of arrays [:id, :quantity]
+  def basket_total_price(basket)
+    total = basket.inject(0) do |sum, item|
+      inventory = inventories.where(inventories: { product_id: item.first }).first
+
+
+      inventory.nil? ? sum : sum + inventory.price_cents * item.last
+    end
     Money.new(total)
   end
 
@@ -24,3 +29,4 @@ class Supermarket < ApplicationRecord
     inventories.where(inventories: { product_id: ids }).count
   end
 end
+
