@@ -6,8 +6,6 @@ class ItemsController < ApplicationController
     list = List.find(list_id)
     # list.update(name: 'Your list')
     @item = Item.create(list: list, product: product)
-    # @price = @item.product.base_price_cents
-
 
     redirect_to root_path
   end
@@ -15,9 +13,7 @@ class ItemsController < ApplicationController
   def plus
     @item = Item.find(params[:item_id])
     amount = @item.quantity + 1
-    # @price += price
     @item.update(quantity: amount)
-
 
     respond_to do |format|
       format.js
