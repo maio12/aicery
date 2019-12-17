@@ -1,7 +1,17 @@
+<span id="geolocation"></span>
+
 <div class="navbar-aicery">
+  <% if params[:lat].present? %>
+  <%= link_to lists_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <%end  %>
+  <% else %>
   <%= link_to url_for(:back) do %>
     <i class="fas fa-arrow-left"></i>
+
   <% end %>
+<% end %>
+
   <p>My Cart</p>
   <%= link_to list_path(current_user.lists.last) do %>
     <i class="fas fa-shopping-cart"></i>
@@ -14,7 +24,7 @@
 <% end %>
 
 <div class="list-edit-bottom">
-       <%= link_to "My Deals", list_checkout_path(@list), class: "edit-btn1"  %>
+       <%= link_to "My Deals", list_checkout_path(@list, lat: params[:lat], lng: params[:lng]), class: "edit-btn1"  %>
       <button type="button" class="edit-btn2" data-toggle="modal" data-target="#exampleModal">Save List</button>
 
 </div>
@@ -41,3 +51,6 @@
     </div>
   </div>
 </div>
+
+
+

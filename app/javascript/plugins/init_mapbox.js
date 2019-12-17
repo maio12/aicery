@@ -19,8 +19,8 @@ const addMarkersToMap = (map, markers) => {
       .setPopup(popup)
       .addTo(map);
        const element = document.createElement('div');
-      element.className = 'marker';
-      element.style.backgroundImage = `url('${marker.asset_url}')`;
+      element.className = 'data-markers-user';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
       element.style.backgroundSize = 'contain';
       element.style.width = '25px';
       element.style.height = '25px';
@@ -36,9 +36,14 @@ const fitMapToMarkers = (map, markers) => {
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
-    const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
+    console.log(mapElement.dataset);
+    const marker_nearest = JSON.parse(mapElement.dataset.markersNearest);
+    const marker_cheapest = JSON.parse(mapElement.dataset.markersCheapest);
+    const marker_user = JSON.parse(mapElement.dataset.markersUser);
+
+    addMarkersToMap(map, [marker_nearest,marker_cheapest,marker_user]);
+    // addMarkersToMap(map, marker_cheapest)
+    fitMapToMarkers(map, [marker_nearest,marker_cheapest,marker_user]);
   }
 };
 

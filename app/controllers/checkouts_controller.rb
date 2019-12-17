@@ -7,47 +7,35 @@ class CheckoutsController < ApplicationController
 
     @cheapest = @supermarkets.first
 
-    @nearest = @supermarkets.fourth # fake nearest
+    if params["lat"].present?
+      lat = params["lat"]
+      lng = params["lng"]
+      @nearest = @list.supermarkets_by_closest_distance(lat,lng).first
 
-    @supermarkets = [@cheapest, @nearest]
+      @marker_nearest =
+        {
+          lat: @nearest.latitude,
+          lng: @nearest.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @nearest }),
+          image_url: helpers.asset_url('user')
+        }
 
-    if params[:lat].present?
-      puts "hello"
-    end
+      @marker_cheapest =
+        {
+          lat: @cheapest.latitude,
+          lng: @cheapest.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @cheapest }),
+          image_url: helpers.asset_url('user')
+        }
 
-    @markers = @supermarkets.map do |supermarket|
-      {
-        lat: supermarket.latitude,
-        lng: supermarket.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { supermarket: supermarket }),
-        image_url: helpers.asset_url('3915754-48.png')
+      @marker_user = {
+        lat: lat,
+        lng: lng,
+        image_url: helpers.asset_url('http://localhost:3000/user.png')
+        # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
+        # image_url: helpers.asset_url('3915754-48.png')
+
       }
-    end
-
-    @markers << user_marker
-  end
-
-  private
-
-  def user_marker
-    {}.tap do |hash|
-      hash[:lat] = params[:lat].presence
-      hash[:lng] = params[:lng].presence
-      hash[:image_url] = helpers.asset_url('3915754-48.png')
     end
   end
 end
-
-# def best_deal
-#   list = List.find(params[:list_id])
-#   product_items = current_user.lists.where(id: params[:list_id]).first.products
-
-#   product_items.zip(Supermarket.all).each do |product, supermarket|
-#     supermarket.products.each do |pr|
-#       if product.id == pr
-#         raise
-#       end
-#     end
-
-#   end
-# end

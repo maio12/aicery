@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  var map = document.getElementById('map');
+  var geo = document.getElementById('geo');
   var watchId;
   url = new URL(window.location.href);
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-  if ((map) && !(url.searchParams.get('lat'))) {
+  if ((geo) && !(url.searchParams.get('lat'))) {
 
   if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(function (location) {

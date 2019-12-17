@@ -13,7 +13,10 @@
   id="map"
   style="width: 100%;
   height: 250px;"
-  data-markers="<%= @markers.to_json %>"
+
+  data-markers-cheapest="<%= @marker_cheapest.to_json %>"
+  data-markers-nearest="<%= @marker_nearest.to_json %>"
+  data-markers-user = "<%=  @marker_user.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 <br>

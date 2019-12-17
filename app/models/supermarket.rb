@@ -20,4 +20,7 @@ class Supermarket < ApplicationRecord
   def total_matches(ids)
     inventories.where(inventories: { product_id: ids }).count
   end
+
+
+
 end

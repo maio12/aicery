@@ -1,7 +1,15 @@
 <div class="navbar-aicery">
+<% if params[:lat].present? %>
+  <%= link_to lists_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <%end  %>
+  <% else %>
   <%= link_to url_for(:back) do %>
     <i class="fas fa-arrow-left"></i>
+
   <% end %>
+<% end %>
+
   <p>My Cart</p>
   <%= link_to list_path(current_user.lists.last) do %>
     <i class="fas fa-shopping-cart"></i>
