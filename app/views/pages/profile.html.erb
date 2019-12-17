@@ -5,21 +5,25 @@
   <p>My Account</p>
   <%= link_to list_path(current_user.lists.last) do %>
     <i class="fas fa-shopping-cart"></i>
-    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+      <% if current_user.lists.last.items.count > 0 %>
+        <p class="notification"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% else %>
+        <p class="notification-hidden"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% end %>
   <% end %>
 </div>
 
   <div class="card-profile">
     <%= link_to edit_user_registration_path :action => 'go' do %>
       <i class="fas fa-user"></i>
-      <p>My Personal Details</p>
+      <p>My Details</p>
     <% end %>
   </div>
 
   <div class="card-profile">
     <%= link_to lists_path, :action => 'go' do %>
       <i class="fas fa-cart-plus"></i>
-      <p>My Saved Lists</p>
+      <p>My Lists</p>
     <% end %>
   </div>
 

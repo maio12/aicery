@@ -2,10 +2,14 @@
   <%= link_to root_path do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
-  <p>My Saved Lists</p>
+  <p>My Lists</p>
   <%= link_to list_path(current_user.lists.last) do %>
     <i class="fas fa-shopping-cart"></i>
-    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
+      <% if current_user.lists.last.items.count > 0 %>
+        <p class="notification"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% else %>
+        <p class="notification-hidden"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% end %>
   <% end %>
 </div>
 
