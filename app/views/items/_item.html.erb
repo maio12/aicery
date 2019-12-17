@@ -3,7 +3,7 @@
   <div class="card-edit1">
     <%= image_tag item.photo %>
     <div class="card-edit-text">
-      <h3><%= item.name %></h3>
+      <h3><%= item.name.split[0..6].join(' ') %></h3>
       <p><%= "#{item.product_quantity} #{item.unit}" %></p>
     </div>
 
