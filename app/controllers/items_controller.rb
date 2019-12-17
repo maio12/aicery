@@ -1,13 +1,22 @@
 class ItemsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:destroy]
+
   def create
     product = Product.find(params[:product])
 
-    list_id = params[:list_id] || current_user.current_list_id
+    list_id = current_user.current_list_id
     list = List.find(list_id)
     # list.update(name: 'Your list')
     @item = Item.create(list: list, product: product)
 
     redirect_to root_path
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(bought: @item.mark_as_complete)
+    @list = List.find(params[:id])
+    redirect_to request.referer
   end
 
   def plus
@@ -37,5 +46,12 @@ class ItemsController < ApplicationController
       format.js
       format.html { redirect_to list_path(list) }
     end
+  end
+
+
+  def destroy
+    puts "hello item"
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 end

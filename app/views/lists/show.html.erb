@@ -7,6 +7,7 @@
   <%end  %>
   <% else %>
   <%= link_to url_for(:back) do %>
+
     <i class="fas fa-arrow-left"></i>
 
   <% end %>
@@ -23,12 +24,16 @@
   <% end %>
 </div>
 
-<% @list.items.order(created_at: :asc).each do |item| %>
-  <%= render item %>
-<% end %>
+<section class="list">
+  <% @list.items.order(created_at: :asc).each do |item| %>
+  <div class="project"><%= render item %></div>
+  <% end %>
+</section>
+
 
 <div class="list-edit-bottom">
        <%= link_to "My Deals", list_checkout_path(@list, lat: params[:lat], lng: params[:lng]), class: "edit-btn1"  %>
+
       <button type="button" class="edit-btn2" data-toggle="modal" data-target="#exampleModal">Save List</button>
 
 </div>
@@ -57,7 +62,10 @@
   </div>
 </div>
 
+<<<<<<< HEAD
  <button class="btn btn-default" id="askButton">Ask for location</button>
 <div id="target"></div>
 
+=======
+>>>>>>> master
 

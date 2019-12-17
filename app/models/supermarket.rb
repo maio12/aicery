@@ -5,9 +5,14 @@ class Supermarket < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
 
-  def basket_total_price(ids)
-    total = inventories.where(inventories: { product_id: ids })
-                       .sum("inventories.price_cents")
+  # basket is an array of arrays [:id, :quantity]
+  def basket_total_price(basket)
+    total = basket.inject(0) do |sum, item|
+      inventory = inventories.where(inventories: { product_id: item.first }).first
+
+
+      inventory.nil? ? sum : sum + inventory.price_cents * item.last
+    end
     Money.new(total)
   end
 
@@ -24,3 +29,4 @@ class Supermarket < ApplicationRecord
 
 
 end
+

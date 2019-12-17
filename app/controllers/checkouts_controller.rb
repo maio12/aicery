@@ -1,4 +1,4 @@
-class CheckoutsController < ApplicationController
+  class CheckoutsController < ApplicationController
   def show
     @list = current_user.lists.find(params[:list_id])
     @product_ids = @list.products.pluck(:id)
@@ -34,7 +34,6 @@ class CheckoutsController < ApplicationController
         image_url: helpers.asset_url('user.png')
         # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
         # image_url: helpers.asset_url('3915754-48.png')
-
       }
       # else
       # @marker_cheapest = true
@@ -42,4 +41,5 @@ class CheckoutsController < ApplicationController
 
     end
   end
+
 end

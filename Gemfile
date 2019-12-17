@@ -20,6 +20,7 @@ gem 'carrierwave', '~> 1.2'
 gem "nokogiri", ">= 1.10.7"
 gem 'geocoder'
 gem 'money-rails'
+gem 'jquery-rails'
 
 gem 'httparty'
 
