@@ -27,7 +27,7 @@
   <div class="buttons_map">
     <div class="buttons_inside_map"><%= @cheapest&.name %></div>
     <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest&.basket_total_price(@list.basket_checkout)) %></div>
-    <div class="buttons_inside_map"><%= @cheapest&.total_matches(@product_ids) %></div>
+    <div class="buttons_inside_map"><%= @cheapest&.total_matches_name %></div>
   </div>
 </div>
 <br>
