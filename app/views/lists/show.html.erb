@@ -9,10 +9,11 @@
   <% end %>
 </div>
 
-<% @list.items.order(created_at: :asc).each do |item| %>
-  <%= render item %>
-<% end %>
-
+<section class="list">
+  <% @list.items.order(created_at: :asc).each do |item| %>
+  <div class="project"><%= render item %></div>
+  <% end %>
+</section>
 
 
 <div class="list-edit-bottom">
@@ -43,3 +44,5 @@
     </div>
   </div>
 </div>
+
+

@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:destroy]
   def index
     @lists = current_user.lists
   end
@@ -30,7 +31,10 @@ class ListsController < ApplicationController
     #implement if else logic
   end
 
-
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+  end
 
   private
 
