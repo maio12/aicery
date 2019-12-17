@@ -1,4 +1,4 @@
-<span id="geolocation"></span>
+<span id="geo"></span>
 
 <div class="navbar-aicery">
   <% if params[:lat].present? %>
@@ -11,6 +11,10 @@
 
   <% end %>
 <% end %>
+
+
+ <button class="btn btn-default" id="askButton">Ask for location</button>
+<div id="target"></div>
 
   <p>My Cart</p>
   <%= link_to list_path(current_user.lists.last) do %>
@@ -28,6 +32,7 @@
       <button type="button" class="edit-btn2" data-toggle="modal" data-target="#exampleModal">Save List</button>
 
 </div>
+
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -52,5 +57,7 @@
   </div>
 </div>
 
+ <button class="btn btn-default" id="askButton">Ask for location</button>
+<div id="target"></div>
 
 

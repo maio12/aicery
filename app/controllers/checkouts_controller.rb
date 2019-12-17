@@ -17,7 +17,7 @@ class CheckoutsController < ApplicationController
           lat: @nearest.latitude,
           lng: @nearest.longitude,
           infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @nearest }),
-          image_url: helpers.asset_url('user')
+          image_url: helpers.asset_url('user.png')
         }
 
       @marker_cheapest =
@@ -25,17 +25,21 @@ class CheckoutsController < ApplicationController
           lat: @cheapest.latitude,
           lng: @cheapest.longitude,
           infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @cheapest }),
-          image_url: helpers.asset_url('user')
+          image_url: helpers.asset_url('user.png')
         }
 
       @marker_user = {
         lat: lat,
         lng: lng,
-        image_url: helpers.asset_url('http://localhost:3000/user.png')
+        image_url: helpers.asset_url('user.png')
         # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
         # image_url: helpers.asset_url('3915754-48.png')
 
       }
+      # else
+      # @marker_cheapest = true
+      # @marker_nearest && @marker_user = false
+
     end
   end
 end
