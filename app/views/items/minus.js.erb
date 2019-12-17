@@ -6,3 +6,10 @@ var el = document.getElementById('item_' + '<%= @item.id %>')
   el.outerHTML = '<%= j render @item %>'
 <% end %>
 
+
+if ( Number.parseInt(document.querySelector('.notification').innerHTML, 10) === 1) {
+  document.querySelector('.notification').classList.replace("notification", "notification-hidden")
+  // document.querySelector('.notification'). = ""
+} else {
+  document.querySelector('.notification').innerHTML = Number.parseInt(document.querySelector('.notification').innerHTML, 10) - 1
+}

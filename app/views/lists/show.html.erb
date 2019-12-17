@@ -1,6 +1,8 @@
 <span id="geo"></span>
 
 <div class="navbar-aicery">
+<<<<<<< HEAD
+<div class="sx">
   <% if params[:lat].present? %>
   <%= link_to lists_path do %>
     <i class="fas fa-arrow-left"></i>
@@ -12,12 +14,19 @@
 
   <% end %>
 <% end %>
+</div>
 
   <p>My Cart</p>
-  <%= link_to list_path(current_user.lists.last) do %>
-    <i class="fas fa-shopping-cart"></i>
-    <p class="notification"><%= current_user.lists.last.items.sum(:quantity) if current_user.lists.last.items.count > 0 %></p>
-  <% end %>
+  <div class="dx">
+    <%= link_to list_path(current_user.lists.last) do %>
+      <i class="fas fa-shopping-cart"></i>
+      <% if current_user.lists.last.items.count > 0 %>
+        <p class="notification"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% else %>
+        <p class="notification-hidden"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 <section class="list">
@@ -26,15 +35,11 @@
   <% end %>
 </section>
 
-
 <div class="list-edit-bottom">
        <%= link_to "My Deals", list_checkout_path(@list, lat: params[:lat], lng: params[:lng]), class: "edit-btn1"  %>
 
       <button type="button" class="edit-btn2" data-toggle="modal" data-target="#exampleModal">Save List</button>
-
 </div>
-
-
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

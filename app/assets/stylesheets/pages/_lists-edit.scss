@@ -61,6 +61,12 @@
   border-radius: 4px;
 }
 
+.card-edit-btn a {
+  color: white;
+  font-size: 25px;
+  margin-left: 11px;
+}
+
 .card-edit-btn p {
   color: white;
   text-align: center;
@@ -78,6 +84,7 @@
   border-top: 1px solid #F5F5F5;
   border-bottom: 1px solid #F5F5F5;
   padding: 10px;
+  width: 100%
 }
 
 .edit-btn1 {
@@ -94,13 +101,14 @@
 .edit-btn2 {
   font-family: Montserrat;
   font-size: 16px;
-  padding: 19px 29px;
+  padding: 20px 29px;
   background: white;
   color: #4A4A4A;
   border-radius: 4px;
   font-weight: bold;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   margin-left: 5px;
+  border-width: 0px;
 }
 
 a:hover {
@@ -112,16 +120,6 @@ button, input {
   font-size: 26px;
 }
 
-.navbar-aicery .notification {
-  background: #FCC72C;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  text-align: center;
-  padding-top: 2px;
-  position: relative;
-  bottom: 15px;
-  right: 20px;
-}
+
 
 
