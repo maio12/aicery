@@ -32,7 +32,7 @@
           <%= form.input :name, label: false %>
       </div>
       <div class="modal-footer">
-          <%=  link_to "Saved Lists", lists_path(@list), class: "btn btn-primary" %>
+          <%= form.submit 'Save List', class: "btn btn-primary" %>
         <% end %>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
