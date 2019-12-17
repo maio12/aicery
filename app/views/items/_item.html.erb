@@ -1,23 +1,23 @@
-<div id="<%= dom_id(item) %>" class="card-edit">
-    <div class="card-edit1">
-      <%= image_tag item.photo %>
-      <div class="card-edit-text">
-        <h3><%= item.name %></h3>
-        <p><%= "#{item.product_quantity} #{item.unit}" %></p>
-      </div>
-    </div>
-
-    <div class="card-edit2">
-      <div class="card-edit-btn">
-        <%= button_to '-', item_minus_path(item), method: :patch, remote: true %>
+  <div id="<%= dom_id(item) %>" class="card-edit">
+      <div class="card-edit1">
+        <%= image_tag item.photo %>
+        <div class="card-edit-text">
+          <h3><%= item.name %></h3>
+          <p><%= "#{item.product_quantity} #{item.unit}" %></p>
+        </div>
       </div>
 
-      <div class="card-edit-number" data>
-        <p><%= item.quantity %></p>
-      </div>
+      <div class="card-edit2">
+        <div class="card-edit-btn">
+          <%= link_to '-', item_minus_path(item), method: :patch, remote: true %>
+        </div>
 
-      <div class="card-edit-btn">
-        <%= button_to '+', item_plus_path(item), method: :patch, remote: true %>
+        <div class="card-edit-number" data>
+          <p><%= item.quantity %></p>
+        </div>
+
+        <div class="card-edit-btn">
+          <%= link_to '+', item_plus_path(item), method: :patch, remote: true %>
+        </div>
       </div>
-    </div>
-</div>
+  </div>

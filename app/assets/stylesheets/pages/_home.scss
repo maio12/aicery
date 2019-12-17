@@ -6,8 +6,15 @@
   font-family: Montserrat;
 }
 
+.illustration img {
+  width: 370px;
+  margin-top: 30px;
+}
+
 .form-control {
   width: 375px;
+  height: 45px;
+  border-radius: 4px;
 }
 
 .product_btn {
@@ -32,6 +39,7 @@
 
 .form-home-page {
   display: flex;
+  margin-top: 50px;
 }
 
 .card-product-home-page {
