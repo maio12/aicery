@@ -8,10 +8,10 @@ class Supermarket < ApplicationRecord
   # basket is an array of arrays [:id, :quantity]
   def basket_total_price(basket)
     total = basket.inject(0) do |sum, item|
-      inventory = inventories.where(inventories: { product_id: item.first }).first
+      inventory = inventories.where(inventories: { product_id: item }).first
 
 
-      inventory.nil? ? sum : sum + inventory.price_cents * item.last
+      inventory.nil? ? sum : sum + inventory.price_cents * item
     end
     Money.new(total)
   end

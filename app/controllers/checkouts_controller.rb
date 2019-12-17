@@ -25,7 +25,7 @@
           lat: @cheapest.latitude,
           lng: @cheapest.longitude,
           infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @cheapest }),
-          image_url: helpers.asset_url('user.png')
+          image_url: helpers.asset_url('greencart.png')
         }
 
       @marker_user = {
