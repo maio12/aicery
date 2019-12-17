@@ -20,17 +20,25 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 <br>
-
+<% if !params["lat"].present?%>
 <div class="show-card">
   <h3>Cheapest Deal</h3>
   <div class="buttons_map">
     <div class="buttons_inside_map"><%= @cheapest.name %></div>
-    <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest.basket_total_price(@product_ids)) %></div>
+    <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest.basket_average_price(@product_ids)) %></div>
+    <div class="buttons_inside_map"><%= @cheapest.total_matches(@product_ids) %></div>
+  </div>
+</div>
+<% else %>
+<div class="show-card">
+  <h3>Cheapest Deal</h3>
+  <div class="buttons_map">
+    <div class="buttons_inside_map"><%= @cheapest.name %></div>
+    <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest.basket_average_price(@product_ids)) %></div>
     <div class="buttons_inside_map"><%= @cheapest.total_matches(@product_ids) %></div>
   </div>
 </div>
 <br>
-
 <div class="show-card">
   <h3>Nearest Deal</h3>
   <div class="buttons_map">
@@ -40,4 +48,4 @@
     <div class="buttons_inside_map"><%= @nearest.total_matches(@product_ids) %></div>
   </div>
 </div>
-
+<% end %>
