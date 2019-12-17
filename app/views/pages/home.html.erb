@@ -17,7 +17,9 @@
   <div class="bar" data-controller="autocomplete"
                    data-autocomplete-url="<%= search_path %>">
     <%= form_tag root_path, method: :get, class: "form-home-page" do %>
+
       <div id= "search-data" class="form-search search-data" data-products="<%= @products.to_json %>">
+        <i class="fas fa-search"></i>
         <%= text_field_tag :query, nil,
                            autocomplete: :off,
                            class: "form-control",
@@ -35,5 +37,5 @@
 </div>
 
 <div class="illustration">
-  <p><%= image_tag("opz3.png") %></p>
+  <%= image_tag("opz3.png") %>
 </div>
