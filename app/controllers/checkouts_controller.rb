@@ -39,7 +39,6 @@ class CheckoutsController < ApplicationController
         # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
         # image_url: helpers.asset_url('3915754-48.png')
       }
-
     end
   end
 end
