@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
-gem 'bootsnap', require: false
+# gem 'bootsnap', require: false
+gem 'bootsnap', '>= 1.1.0', '< 1.4.2', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
@@ -21,6 +22,7 @@ gem "nokogiri", ">= 1.10.7"
 gem 'geocoder'
 gem 'money-rails'
 gem 'jquery-rails'
+
 
 gem 'httparty'
 
