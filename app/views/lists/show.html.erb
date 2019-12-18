@@ -1,3 +1,5 @@
+<span id="geo"></span>
+
 <div class="navbar-aicery">
   <div class="sx">
     <%= link_to root_path do %>
@@ -6,12 +8,12 @@
   </div>
   <p>My Cart</p>
   <div class="dx">
-    <%= link_to list_path(current_user.lists.last) do %>
+    <%= link_to list_path(@cart_list) do %>
       <i class="fas fa-shopping-cart"></i>
-      <% if current_user.lists.last.items.count > 0 %>
-        <p class="notification"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% if @cart_list.items.count.positive? %>
+        <p class="notification"><%= @cart_list.items.sum(:quantity)%></p>
       <% else %>
-        <p class="notification-hidden"><%= current_user.lists.last.items.sum(:quantity)%></p>
+        <p class="notification-hidden"><%= @cart_list.items.sum(:quantity)%></p>
       <% end %>
     <% end %>
   </div>
@@ -24,7 +26,8 @@
 </section>
 
 <div class="list-edit-bottom">
-      <%= link_to "My Deals", list_checkout_path(@list), class: "edit-btn1"  %>
+       <%= link_to "My Deals", list_checkout_path(@list, lat: params[:lat], lng: params[:lng]), class: "edit-btn1"  %>
+
       <button type="button" class="edit-btn2" data-toggle="modal" data-target="#exampleModal">Save List</button>
 </div>
 
@@ -38,7 +41,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for [@list] do |form| %>
+        <p>show</p>
+        <%= simple_form_for [@list], url: lists_path, method: :post  do |form| %>
           <%= form.input :name, label: false %>
       </div>
       <div class="modal-footer">
@@ -49,5 +53,6 @@
     </div>
   </div>
 </div>
+
 
 

@@ -1,4 +1,4 @@
-  class CheckoutsController < ApplicationController
+class CheckoutsController < ApplicationController
   def show
     @list = current_user.lists.find(params[:list_id])
     @product_ids = @list.products.pluck(:id)
@@ -7,33 +7,37 @@
 
     @cheapest = @supermarkets.first
 
-    @nearest = @supermarkets.fourth # fake nearest
+    if @cheapest.present?
+      @marker_cheapest =
+        {
+          lat: @cheapest.latitude,
+          lng: @cheapest.longitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @cheapest }),
+          image_url: helpers.asset_url('moneycart.png')
 
-    @supermarkets = [@cheapest, @nearest].reject(&:nil?)
+        }
+    end
 
+    lat = params["lat"]
+    lng = params["lng"]
 
-    @markers = @supermarkets.map do |supermarket|
-      {
-        lat: supermarket.latitude,
-        lng: supermarket.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { supermarket: supermarket })
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+    if lat.present? && lng.present?
+      @nearest = @list.supermarkets_by_closest_distance(lat,lng).first
+
+      @marker_nearest = {
+        lat: @nearest.latitude,
+        lng: @nearest.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @nearest }),
+        image_url: helpers.asset_url('fastcart.png')
+      }
+
+      @marker_user = {
+        lat: lat,
+        lng: lng,
+        image_url: helpers.asset_url('userlocation.png')
+        # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
+        # image_url: helpers.asset_url('3915754-48.png')
       }
     end
   end
-
 end
-
-# def best_deal
-#   list = List.find(params[:list_id])
-#   product_items = current_user.lists.where(id: params[:list_id]).first.products
-
-#   product_items.zip(Supermarket.all).each do |product, supermarket|
-#     supermarket.products.each do |pr|
-#       if product.id == pr
-#         raise
-#       end
-#     end
-
-#   end
-# end

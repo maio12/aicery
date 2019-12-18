@@ -36,4 +36,15 @@ class List < ApplicationRecord
                .having("count(products.id) > #{ids.size / 2}")
                .order(Arel.sql("avg(products.base_price_cents)"))
   end
+
+
+  def supermarkets_by_closest_distance(lat, lng)
+
+      results = Supermarket.near([lat, lng], 50, units: :km)
+      # nearbys = Supermarket.near(user, 50, :order => "distance")
+      # bearing = nearbys.first.bearing # => 46.12
+      # Geocoder::Calculations.compass_point(bearing)
+      return results
+  end
 end
+
