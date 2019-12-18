@@ -37,13 +37,20 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
     console.log(mapElement.dataset);
+    const markers = [];
     const marker_nearest = JSON.parse(mapElement.dataset.markersNearest);
     const marker_cheapest = JSON.parse(mapElement.dataset.markersCheapest);
     const marker_user = JSON.parse(mapElement.dataset.markersUser);
 
-    addMarkersToMap(map, [marker_nearest,marker_cheapest,marker_user]);
-    // addMarkersToMap(map, marker_cheapest)
-    fitMapToMarkers(map, [marker_nearest,marker_cheapest,marker_user]);
+    if (marker_nearest) { markers.push(marker_nearest) }
+    if (marker_cheapest) { markers.push(marker_cheapest) }
+    if (marker_user) { markers.push(marker_user) }
+
+    if (markers.length > 0 ) {
+      addMarkersToMap(map, markers);
+      // addMarkersToMap(map, marker_cheapest)
+      fitMapToMarkers(map, markers);
+    }
   }
 };
 
