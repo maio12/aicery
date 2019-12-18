@@ -6,19 +6,17 @@
       <h3><%= item.name.split[0..6].join(' ') %></h3>
       <p><%= "#{item.product_quantity} #{item.unit}" %></p>
     </div>
-
-    <div class="card-edit2">
-      <div class="card-edit-btn">
-        <%= link_to '-', item_minus_path(item), method: :patch, remote: true %>
-      </div>
-
-      <div class="card-edit-number" data>
-        <p><%= item.quantity %></p>
-      </div>
-
-      <div class="card-edit-btn">
-        <%= link_to '+', item_plus_path(item), method: :patch, remote: true %>
-      </div>
+  </div>
+  <div class="card-edit2">
+    <div class="card-edit-btn">
+      <%= link_to '-', item_minus_path(item), method: :patch, remote: true %>
+    </div>
+    <div class="card-edit-number" data>
+      <p><%= item.quantity %></p>
+    </div>
+    <div class="card-edit-btn">
+      <%= link_to '+', item_plus_path(item), method: :patch, remote: true %>
     </div>
   </div>
+</div>
 </div>
