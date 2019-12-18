@@ -37,6 +37,19 @@
   margin-top: 10px;
 }
 
+.purchase-card-strike {
+  text-decoration: line-through;
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px 10px 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
 .fa-check:before {
   color: #FCC72C;
   margin-right: 10px;
