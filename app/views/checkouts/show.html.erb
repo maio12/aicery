@@ -29,11 +29,12 @@
   <div class="show-card">
     <h3>Cheapest Deal</h3>
     <div class="buttons_map">
-
-      <div class="buttons_inside_map">
-        <i class="fas fa-map-marker-alt"></i>
-        <p><%= @cheapest&.name %></p>
-      </div>
+      <%= link_to "https://www.google.com/maps/place/#{@cheapest.address}", target:"_blank", rel: "alternate" do %>
+        <div class="buttons_inside_map">
+          <i class="fas fa-map-marker-alt"></i>
+          <p><%= @cheapest&.name %></p>
+        </div>
+      <%end%>
 
       <div class="buttons_inside_map_money">
         <i class="far fa-money-bill-alt"></i>
@@ -44,7 +45,6 @@
         <i class="fas fa-carrot"></i>
         <p><%= @cheapest&.total_matches(@product_ids) %>/<%= @list.product_ids.count %> products available </p>
       </div>
-
     </div>
   </div>
 <% end %>
@@ -55,11 +55,12 @@
     <div class="show-card-nearest">
       <h3>Nearest Deal</h3>
       <div class="buttons_map">
-
-        <div class="buttons_inside_map">
-          <i class="fas fa-map-marker-alt"></i>
-          <p><%= @nearest&.name %></p>
-        </div>
+        <%= link_to "https://www.google.com/maps/place/#{@nearest.address}", target:"_blank", rel: "alternate" do %>
+          <div class="buttons_inside_map">
+            <i class="fas fa-map-marker-alt"></i>
+            <p><%= @nearest&.name %></p>
+          </div>
+        <%end%>
 
         <div class="buttons_inside_map_money">
           <i class="far fa-money-bill-alt"></i>
@@ -70,7 +71,6 @@
           <i class="fas fa-carrot"></i>
           <p><%= @nearest&.total_matches(@product_ids) %>/<%= @list.product_ids.count %> products available </p>
         </div>
-
       </div>
     </div>
   <% end %>
