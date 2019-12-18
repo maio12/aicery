@@ -16,7 +16,7 @@
 }
 
 .form-control-supremo {
-  width: 375px;
+  width: 369px;
   height: 45px;
   border-radius: 4px;
   outline: 0px;
@@ -35,7 +35,9 @@
 .fa-search:before {
   margin-left: 10px;
   font-size: 20px;
-  color: #4A4A4A
+  color: #4A4A4A;
+  position: relative;
+  bottom: 7px;
 }
 
 .form-control-supremo:focus {

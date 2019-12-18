@@ -34,7 +34,7 @@ class CheckoutsController < ApplicationController
       @marker_user = {
         lat: lat,
         lng: lng,
-        image_url: helpers.asset_url('userlocation.png')
+        image_url: helpers.asset_url('my_location.png')
         # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
         # image_url: helpers.asset_url('3915754-48.png')
       }
