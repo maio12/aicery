@@ -30,7 +30,7 @@
     <h3>Cheapest Deal</h3>
     <div class="buttons_map">
 
-      <%= link_to "https://www.google.com/maps/place/#{@cheapest.address}", target:"_blank", rel: "alternate" do %>
+      <%= link_to "https://www.google.com/maps/place/#{@cheapest.address}", data: { confirm: "Do you want to go to Google Maps?" }, target:"_blank", rel: "alternate" do %>
         <div class="buttons_inside_map">
           <i class="fas fa-map-marker-alt"></i>
           <p><%= @cheapest&.name %></p>
@@ -57,7 +57,7 @@
       <h3>Nearest Deal</h3>
       <div class="buttons_map">
 
-        <%= link_to "https://www.google.com/maps/place/#{@nearest.address}", target:"_blank", rel: "alternate" do %>
+        <%= link_to "https://www.google.com/maps/place/#{@nearest.address}", data: { confirm: "Do you want to go to Google Maps?" }, target:"_blank", rel: "alternate" do %>
           <div class="buttons_inside_map">
             <i class="fas fa-map-marker-alt"></i>
             <p><%= @nearest&.name %></p>
