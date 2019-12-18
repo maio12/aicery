@@ -1,12 +1,28 @@
-
 .show-card {
-width: 100vw;
-height: 100px;
-left: 14px;
-top: 455px;
+width: 100%;
 background: #FCC72C;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 border-radius: 4px;
+padding-top: 15px;
+padding-bottom: 20px;
+}
+
+.show-card-nearest {
+width: 100%;
+background: #FF6F5E;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+border-radius: 4px;
+padding-top: 15px;
+padding-bottom: 20px;
+}
+
+.show-card-nearest h3 {
+  font-family: Montserrat;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .show-card h3 {
@@ -14,6 +30,8 @@ border-radius: 4px;
   color: white;
   text-align: center;
   font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .buttons_map {
@@ -23,23 +41,77 @@ align-items: center;
 }
 
 .buttons_inside_map {
-width: 115px;
-height: 58px;
-left: 39px;
-top: 519px;
+// width: 115px;
+width: 125px;
+// height: 58px;
+height: 105px;
 font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 15px;
+font-size: 15px;
+// line-height: 15px;
 text-align: center;
 color: #4A4A4A;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+// text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 background-color: white;
 border-radius: 4px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-padding: 1% 0;
+padding-right: 5px;
+padding-left: 5px;
+}
 
+.fa-map-marker-alt:before {
+  font-size: 20px;
+}
+
+.fa-coins:before {
+  font-size: 20px;
+}
+
+.fa-carrot:before {
+  font-size: 20px;
+}
+
+.fa-money-bill-alt:before {
+  font-size: 20px;
+}
+
+.buttons_inside_map_money {
+  // width: 115px;
+width: 125px;
+// height: 58px;
+height: 105px;
+font-family: Montserrat;
+font-size: 15px;
+// line-height: 15px;
+text-align: center;
+color: #4A4A4A;
+// text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+background-color: white;
+border-radius: 4px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+padding-right: 5px;
+padding-left: 5px;
+}
+
+.buttons_inside_map_money p {
+  margin-top: 10px;
+}
+
+.buttons_inside_map_match {
+  // width: 115px;
+width: 125px;
+// height: 58px;
+height: 105px;
+font-family: Montserrat;
+font-size: 15px;
+// line-height: 15px;
+text-align: center;
+color: #4A4A4A;
+// text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+background-color: white;
+border-radius: 4px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+padding-right: 5px;
+padding-left: 5px;
 }
 
 .closest {
