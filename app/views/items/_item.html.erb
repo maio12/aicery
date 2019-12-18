@@ -9,7 +9,7 @@
 
     <div class="card-edit2">
       <div class="card-edit-btn">
-        <%= button_to '-', item_minus_path(item), method: :patch, remote: true %>
+        <%= button_to '-', item_minus_path(item), method: :patch, remote: true, class: 'js-add-to-cart' %>
       </div>
 
       <div class="card-edit-number" data>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="card-edit-btn">
-        <%= button_to '+', item_plus_path(item), method: :patch, remote: true %>
+        <%= button_to '+', item_plus_path(item), method: :patch, remote: true, class: 'js-add-to-cart' %>
       </div>
     </div>
 </div>

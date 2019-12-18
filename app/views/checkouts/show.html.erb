@@ -18,17 +18,20 @@
 ></div>
 <br>
 
+
+<%= link_to list_supermarket_path(@list, @cheapest) do %>
 <div class="show-card">
   <h3>Cheapest Deal</h3>
   <div class="buttons_map">
-    <div class="buttons_inside_map"><%= @cheapest&.name %>
-    </div>
+    <div class="buttons_inside_map"><%= @cheapest&.name %></div>
     <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest&.basket_total_price(@list.basket_checkout)) %></div>
     <div class="buttons_inside_map"><%= @cheapest&.total_matches(@product_ids) %></div>
   </div>
+  <% end %>
 </div>
 <br>
 
+<%= link_to list_supermarket_path(@list, @nearest) do %>
 <div class="show-card">
   <h3>Nearest Deal</h3>
   <div class="buttons_map">
@@ -36,6 +39,7 @@
     <div class="buttons_inside_map"><%= humanized_money_with_symbol(@nearest&.basket_total_price(@list.basket_checkout)) %></div>
     <div class="buttons_inside_map"><%= @nearest&.total_matches(@product_ids) %></div>
   </div>
+  <% end %>
 </div>
 
 
