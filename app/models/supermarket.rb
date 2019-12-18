@@ -29,9 +29,5 @@ class Supermarket < ApplicationRecord
     inventories.where(inventories: { product_id: ids }).count
   end
 
-
-  def total_matches_name(ids)
-    inventories.where(inventories: { product_id: ids })
-  end
 end
 
