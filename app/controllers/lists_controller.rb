@@ -28,7 +28,15 @@ class ListsController < ApplicationController
   end
 
   def create
-    #implement if else logic
+    @list = List.new(list_params)
+    # @list.name = params.dig(:list, :name)
+    @list.user = current_user
+    @list.items << @cart_list.items
+    # @cart_list.items.each do |item|
+    #   @list.items << item.dup
+    # end
+    @list.save
+    redirect_to lists_path, notice: "List created successfully"
   end
 
   def destroy

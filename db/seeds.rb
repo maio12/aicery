@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
-
+require 'money'
 
 puts 'Cleaning database...'
-List.destroy_all
 Inventory.destroy_all
 Supermarket.destroy_all
-Product.destroy_all
 Item.destroy_all
+Product.destroy_all
+List.destroy_all
 User.destroy_all
 
 
