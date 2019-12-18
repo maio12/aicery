@@ -1,3 +1,5 @@
 var el = document.getElementById('item_' + '<%= @item.id %>')
 el.outerHTML = '<%= j render @item %>'
 
+document.querySelector('.notification').innerHTML = Number.parseInt(document.querySelector('.notification').innerHTML
+, 10) + 1

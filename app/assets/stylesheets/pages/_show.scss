@@ -1,3 +1,35 @@
+// drag
+
+.list {
+  padding:.5em;
+}
+
+.project {
+  background: white;
+  // text-align: center;
+  // font: 20px/120px sans-serif;
+  position:relative;
+  left:0px;
+  width:100%;
+  margin:1em 0;
+}
+
+@keyframes dismiss {
+  50% { left: -100vw; }
+  100% { left: -100vw; height:0; margin:0 0 -1em; }
+  /* height set explicitly via JS before .dismiss added  */
+}
+
+.dismiss {
+  animation: dismiss .25s forwards;
+}
+
+.remove {
+  display:none;
+}
+
+//-------
+
 .container-show-page-title {
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);

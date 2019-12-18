@@ -6,8 +6,21 @@
   font-family: Montserrat;
 }
 
+.illustration img {
+  width: 370px;
+  margin-top: 30px;
+}
+
+.illustration {
+  text-align: center;
+}
+
 .form-control {
   width: 375px;
+  height: 45px;
+  border-radius: 4px;
+  outline: 0px;
+  border-width: 0px;
 }
 
 .product_btn {
@@ -16,13 +29,32 @@
   padding: 3px 10px;
   border-radius: 4px;
   margin-right: 10px;
+  margin-left: 20px;
+}
+
+.fa-search:before {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #4A4A4A
+}
+
+.form-control:focus {
+  border-color: white;
+  box-shadow: none;
+}
+
+a:hover {
+  color: white;
 }
 
 #search-data {
   margin-top: 40px;
   display: flex;
-  height: 40px;
+  height: 50px;
   justify-content: space-around;
+  align-items: center;
+  border: 1px solid #B4B4B4;
+  border-radius: 4px;
 }
 
 .container-home-page {
@@ -32,6 +64,7 @@
 
 .form-home-page {
   display: flex;
+  margin-top: 50px;
 }
 
 .card-product-home-page {
@@ -43,7 +76,8 @@
   align-items: center;
   justify-content: space-between;
   color: #4A4A4A;
-  max-width: 375px;
+  max-width: 403px;
+  margin-left: 2px;
 }
 
 .card-product-home-page img {

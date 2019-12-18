@@ -1,10 +1,10 @@
 <div id="<%= dom_id(item) %>" class="card-edit">
-    <div class="card-edit1">
-      <%= image_tag item.photo %>
-      <div class="card-edit-text">
-        <h3><%= item.name %></h3>
-        <p><%= "#{item.product_quantity} #{item.unit}" %></p>
-      </div>
+  <span id= "<%= item.id  %>"></span>
+  <div class="card-edit1">
+    <%= image_tag item.photo %>
+    <div class="card-edit-text">
+      <h3><%= item.name.split[0..6].join(' ') %></h3>
+      <p><%= "#{item.product_quantity} #{item.unit}" %></p>
     </div>
 
     <div class="card-edit2">
@@ -20,4 +20,5 @@
         <%= button_to '+', item_plus_path(item), method: :patch, remote: true, class: 'js-add-to-cart' %>
       </div>
     </div>
+  </div>
 </div>

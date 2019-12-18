@@ -1,22 +1,31 @@
 .navbar-aicery {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  justify-items: center;
   background: #00918E;
   height: 70px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
 }
 
 .fa-arrow-left:before {
   color: white;
   font-size: 25px;
   margin-left: 10px;
+  position: relative;
+  right: 35px;
 }
 
 .fa-shopping-cart:before {
   color: white;
   font-size: 25px;
-  margin-right: 10px;
+  position: relative;
+  left: 35px;
+  // margin-right: 10px;
 }
 
 .navbar-aicery p {
@@ -28,4 +37,39 @@
   font-size: 18px;
   line-height: 22px;
   margin-bottom: 0;
+}
+
+.navbar-aicery .courgette {
+  font-family: 'Courgette', cursive;
+  font-size: 30px;
+}
+
+.navbar-aicery .notification {
+  background: #FCC72C;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2px;
+  position: relative;
+  bottom: 15px;
+  right: -25px;
+}
+
+.navbar-aicery .notification-hidden {
+  // background: #FCC72C;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 2px;
+  position: relative;
+  bottom: 15px;
+  right: -25px;
+  color: #00918E;
+}
+
+body {
+  padding-top: 70px;
+  padding-bottom: 165px;
 }

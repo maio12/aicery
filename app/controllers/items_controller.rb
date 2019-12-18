@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:destroy]
+
   def create
     product = Product.find(params[:product])
 
@@ -43,5 +45,12 @@ class ItemsController < ApplicationController
       format.js
       format.html { redirect_to list_path(list) }
     end
+  end
+
+
+  def destroy
+    puts "hello item"
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 end
