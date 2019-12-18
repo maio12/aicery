@@ -10,7 +10,7 @@
   <% end %>
   <p>My Cart</p>
   <%= link_to list_path(current_user.lists.last) do %>
-    <i class="fas fa-shopping-cart"></i>
+    <i class="fas fa-shopping-cart" style="transition: transform 0.2s;"></i>
     <% raise %>
     <p><%= @list.items.count if @list.present && @list.positive? %>
  <% end %>

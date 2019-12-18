@@ -15,7 +15,9 @@ import "../vendor/stimulus";
 import { dragInit } from '../plugins/init_drag';
 import { dragInit2 } from '../plugins/init_drag';
 
+import { initAnimateCart } from "../components/cartanimation";
 
+initAnimateCart();
 
 
 initMapbox();
