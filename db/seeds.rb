@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
-
+require 'money'
 
 puts 'Cleaning database...'
-List.destroy_all
 Inventory.destroy_all
 Supermarket.destroy_all
-Product.destroy_all
 Item.destroy_all
+Product.destroy_all
+List.destroy_all
 User.destroy_all
 
 
@@ -55,12 +55,12 @@ products.first(350).each do |row|
     )
 end
 
-supermarket = Supermarket.create(chain: "Carrefour", name: "Carrefour Porta Venezia", address: "Via Gustavo Modena 8 Milan")
-supermarket1 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Venezia", address: "Viale Piave, 38B Milan")
-supermarket2 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Venezia", address: "Viale Premuda, 27 Milan")
-supermarket3 = Supermarket.create(chain: "Carrefour", name: "Carrefour Duomo", address: "Piazza Santo Stefano, 6, 20122 Milano")
-supermarket4 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Romana", address: " Via Giovanni Cena, 8, 20135 Milano")
-supermarket5 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Romana", address: "Via Lodovico Muratori, 27/29, 20135 Milano")
+supermarket = Supermarket.create(chain: "Carrefour", name: "Carrefour Porta Venezia", address: "Via Gustavo Modena 8 Milan", latitude: 45.470730, longitude: 9.212550)
+supermarket1 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Venezia", address: "Viale Piave, 38B Milan", latitude: 45.472760, longitude: 9.206750)
+supermarket2 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Venezia", address: "Viale Premuda, 27 Milan", latitude: 45.466820, longitude: 9.206920)
+supermarket3 = Supermarket.create(chain: "Carrefour", name: "Carrefour Duomo", address: "Piazza Santo Stefano, 6, 20122 Milano", latitude: 45.462250, longitude: 9.194290)
+supermarket4 = Supermarket.create(chain: "Esselunga", name: "Esselunga Porta Romana", address: " Via Giovanni Cena, 8, 20135 Milano", latitude: 45.460500, longitude: 9.220340)
+supermarket5 = Supermarket.create(chain: "U2 Supermercato", name: "U2 Supermercato Porta Romana", address: "Via Lodovico Muratori, 27/29, 20135 Milano", latitude: 45.532600, longitude: 9.048010)
 
 
 

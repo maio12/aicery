@@ -5,6 +5,9 @@ import '../plugins/init_drag.js'
 // import "../plugins/init_drag.js";
 import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import "../vendor/stimulus"
+import "../geoloader.js"
+initMapbox();
 import "../vendor/stimulus";
 // import { endTouch } from '../plugins/init_drag.js';
 // import { moveTouch } from '../plugins/init_drag.js';
@@ -15,6 +18,7 @@ import { dragInit2 } from '../plugins/init_drag';
 import { initAnimateCart } from "../components/cartanimation";
 
 initAnimateCart();
+
 
 initMapbox();
 dragInit();

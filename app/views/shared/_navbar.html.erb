@@ -1,11 +1,18 @@
 <div class="navbar-aicery">
+<% if params[:lat].present? %>
+  <%= link_to lists_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <%end  %>
+<% end %>
+
   <%= link_to url_for(:back) do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
   <p>My Cart</p>
   <%= link_to list_path(current_user.lists.last) do %>
     <i class="fas fa-shopping-cart" style="transition: transform 0.2s;"></i>
-    <p><%= current_user.lists.last.items.count if current_user.lists.last.items.count > 0 %></p>
+    <% raise %>
+    <p><%= @list.items.count if @list.present && @list.positive? %>
  <% end %>
 </div>
 
