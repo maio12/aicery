@@ -28,14 +28,15 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = @cart_list.dup
-    @list.name = params.dig(:list, :name)
+    @list = List.new(list_params)
+    # @list.name = params.dig(:list, :name)
     @list.user = current_user
-    @cart_list.items.each do |item|
-      @list.items << item.dup
-    end
+    @list.items << @cart_list.items
+    # @cart_list.items.each do |item|
+    #   @list.items << item.dup
+    # end
     @list.save
-    redirect_to lists_path, notice: "List created motherfucker"
+    redirect_to lists_path, notice: "List created successfully"
   end
 
   def destroy
