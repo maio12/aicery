@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(bought: @item.mark_as_complete)
+    #@list = List.find(params[:id])
     redirect_to request.referer
   end
 
