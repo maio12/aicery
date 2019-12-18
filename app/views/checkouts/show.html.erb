@@ -3,12 +3,12 @@
     <i class="fas fa-arrow-left"></i>
   <% end %>
   <p>My Deals</p>
-  <%= link_to list_path(current_user.lists.last) do %>
+  <%= link_to list_path(@list) do %>
     <i class="fas fa-shopping-cart"></i>
-      <% if current_user.lists.last.items.count > 0 %>
-        <p class="notification"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% if @list.items.count.positive? %>
+        <p class="notification"><%= @list.items.sum(:quantity)%></p>
       <% else %>
-        <p class="notification-hidden"><%= current_user.lists.last.items.sum(:quantity)%></p>
+        <p class="notification-hidden"><%= @list.items.sum(:quantity)%></p>
       <% end %>
   <% end %>
 </div>
@@ -24,33 +24,24 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 <br>
-<% if !params["lat"].present?%>
 <div class="show-card">
   <h3>Cheapest Deal</h3>
   <div class="buttons_map">
 
-    <div class="buttons_inside_map"><%= @cheapest&.name %></div>
-    <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest&.basket_total_price(@list.basket_checkout)) %></div>
-    <div class="buttons_inside_map"><%= @cheapest&.total_matches_name(@product_ids) %></div>
-
-  </div>
-</div>
-<% else %>
-<div class="show-card">
-  <h3>Cheapest Deal</h3>
-  <div class="buttons_map">
     <div class="buttons_inside_map"><%= @cheapest&.name %></div>
     <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest&.basket_total_price(@list.basket_checkout)) %></div>
     <div class="buttons_inside_map"><%= @cheapest&.total_matches(@product_ids) %></div>
+
   </div>
 </div>
-<br>
-<div class="show-card">
-  <h3>Nearest Deal</h3>
-  <div class="buttons_map">
-    <div class="buttons_inside_map"> <%= @nearest&.name %></div>
-    <div class="buttons_inside_map"><%= humanized_money_with_symbol(@nearest&.basket_total_price(@list.basket_checkout)) %></div>
-    <div class="buttons_inside_map"><%= @nearest&.total_matches(@product_ids) %></div>
+<% if params["lat"].present?%>
+  <br>
+  <div class="show-card">
+    <h3>Nearest Deal</h3>
+    <div class="buttons_map">
+      <div class="buttons_inside_map"> <%= @nearest&.name %></div>
+      <div class="buttons_inside_map"><%= humanized_money_with_symbol(@nearest&.basket_total_price(@list.basket_checkout)) %></div>
+      <div class="buttons_inside_map"><%= @nearest&.total_matches(@product_ids) %></div>
+    </div>
   </div>
-</div>
 <% end %>

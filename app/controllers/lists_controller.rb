@@ -6,7 +6,6 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-
   end
 
   def edit
@@ -29,7 +28,10 @@ class ListsController < ApplicationController
   end
 
   def create
-    #implement if else logic
+    @list = List.new(name: params["list"]["name"])
+    @list.user = current_user
+    @list.save
+    redirect_to lists_path, notice: "List created motherfucker"
   end
 
   def destroy

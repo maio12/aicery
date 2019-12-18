@@ -7,3 +7,4 @@ class ShoppingsController < ApplicationController
     @ids_items_supermarkets = @list_items_supermarkets.pluck(:product_id)
   end
 end
+

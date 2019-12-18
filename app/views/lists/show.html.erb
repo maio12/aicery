@@ -1,28 +1,19 @@
 <span id="geo"></span>
 
 <div class="navbar-aicery">
-<div class="sx">
-  <% if params[:lat].present? %>
-  <%= link_to lists_path do %>
-    <i class="fas fa-arrow-left"></i>
-  <%end  %>
-  <% else %>
-  <%= link_to url_for(:back) do %>
-
-    <i class="fas fa-arrow-left"></i>
-
-  <% end %>
-<% end %>
-</div>
-
+  <div class="sx">
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
   <p>My Cart</p>
   <div class="dx">
-    <%= link_to list_path(current_user.lists.last) do %>
+    <%= link_to list_path(@cart_list) do %>
       <i class="fas fa-shopping-cart"></i>
-      <% if current_user.lists.last.items.count > 0 %>
-        <p class="notification"><%= current_user.lists.last.items.sum(:quantity)%></p>
+      <% if @cart_list.items.count.positive? %>
+        <p class="notification"><%= @cart_list.items.sum(:quantity)%></p>
       <% else %>
-        <p class="notification-hidden"><%= current_user.lists.last.items.sum(:quantity)%></p>
+        <p class="notification-hidden"><%= @cart_list.items.sum(:quantity)%></p>
       <% end %>
     <% end %>
   </div>
@@ -50,7 +41,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for [@list] do |form| %>
+        <p>show</p>
+        <%= simple_form_for [@list], url: lists_path, method: :post  do |form| %>
           <%= form.input :name, label: false %>
       </div>
       <div class="modal-footer">

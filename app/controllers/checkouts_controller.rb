@@ -7,9 +7,7 @@ class CheckoutsController < ApplicationController
 
     @cheapest = @supermarkets.first
 
-    if !params["lat"].present?
-
-
+    if @cheapest.present?
       @marker_cheapest =
         {
           lat: @cheapest.latitude,
@@ -18,27 +16,20 @@ class CheckoutsController < ApplicationController
           image_url: helpers.asset_url('moneycart.png')
 
         }
+    end
 
-    else
-      lat = params["lat"]
-      lng = params["lng"]
+    lat = params["lat"]
+    lng = params["lng"]
+
+    if lat.present? && lng.present?
       @nearest = @list.supermarkets_by_closest_distance(lat,lng).first
 
-      @marker_nearest =
-        {
-          lat: @nearest.latitude,
-          lng: @nearest.longitude,
-          infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @nearest }),
-          image_url: helpers.asset_url('fastcart.png')
-        }
-
-      @marker_cheapest =
-        {
-          lat: @cheapest.latitude,
-          lng: @cheapest.longitude,
-          infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @cheapest }),
-          image_url: helpers.asset_url('moneycart.png')
-        }
+      @marker_nearest = {
+        lat: @nearest.latitude,
+        lng: @nearest.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @nearest }),
+        image_url: helpers.asset_url('fastcart.png')
+      }
 
       @marker_user = {
         lat: lat,
@@ -47,11 +38,6 @@ class CheckoutsController < ApplicationController
         # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
         # image_url: helpers.asset_url('3915754-48.png')
       }
-      # else
-      # @marker_cheapest = true
-      # @marker_nearest && @marker_user = false
-
     end
   end
-
 end
