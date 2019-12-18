@@ -29,10 +29,11 @@
   <div class="show-card">
     <h3>Cheapest Deal</h3>
     <div class="buttons_map">
-
+      <%= link_to "https://www.google.com/maps/place/#{@cheapest.address}", target:"_blank", rel: "alternate" do %>
       <div class="buttons_inside_map"><%= @cheapest&.name %></div>
+      <%end%>
       <div class="buttons_inside_map"><%= humanized_money_with_symbol(@cheapest&.basket_total_price(@list.basket_checkout)) %></div>
-      <div class="buttons_inside_map"><%= @cheapest&.total_matches(@product_ids) %></div>
+      <div class="buttons_inside_map"><%= @cheapest&.total_matches(@product_ids) %> <p>products match out of </p> <%= @list.product_ids.count %></div>
     </div>
   </div>
 <% end %>
@@ -43,7 +44,9 @@
     <div class="show-card">
       <h3>Nearest Deal</h3>
       <div class="buttons_map">
+        <%= link_to "https://www.google.com/maps/place/#{@nearest.address}", target:"_blank", rel: "alternate" do %>
         <div class="buttons_inside_map"> <%= @nearest&.name %></div>
+        <%end%>
         <div class="buttons_inside_map"><%= humanized_money_with_symbol(@nearest&.basket_total_price(@list.basket_checkout)) %></div>
         <div class="buttons_inside_map"><%= @nearest&.total_matches(@product_ids) %></div>
       </div>
