@@ -15,4 +15,9 @@ class Item < ApplicationRecord
   def mark_as_complete
     @bought = true
   end
+
+  def undo
+
+  end
+
 end

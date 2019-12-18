@@ -7,7 +7,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import "../vendor/stimulus"
 import "../geoloader.js"
-initMapbox();
+
+import "../components/toggle.js"
 import "../vendor/stimulus";
 // import { endTouch } from '../plugins/init_drag.js';
 // import { moveTouch } from '../plugins/init_drag.js';
