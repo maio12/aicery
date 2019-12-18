@@ -4,7 +4,8 @@ let timer;
 const cart = document.querySelector(".fa-shopping-cart");
 
 function startTimer() {
-  timer = setInterval(animateCart, 60);
+  // if (counter < 6) {timer = setInterval(animateCart(), 60)}
+  console.log("after timout")
 }
 
 
@@ -19,20 +20,22 @@ function animateCart() {
   cart.style.transform = `scale(${ratio})`
 console.log(counter)
   if (counter >= 6) {
+    console.log("inside if")
     clearTimeout(timer);
     cart.style.transform = "scale(1)"
     counter = 0;
   }
+
 }
 
 function initAnimateCart() {
-  if (!cart) { return }
+  // if (!cart) { return }
 
-  const buttons = document.querySelectorAll(".js-add-to-cart");
+  // const buttons = document.querySelectorAll(".js-add-to-cart");
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => startTimer())
-  })
+  // buttons.forEach(button => {
+  //   button.addEventListener("click", () => startTimer())
+  // })
 }
 
 export { initAnimateCart };

@@ -9,13 +9,13 @@
   </div>
   <div class="card-edit2">
     <div class="card-edit-btn">
-      <%= link_to '-', item_minus_path(item), method: :patch, remote: true, class: 'js-add-to-cart' %>
+      <%= link_to '-', item_minus_path(item), method: :patch, remote: true,  data: {action: "click->cart#animate"} %>
     </div>
     <div class="card-edit-number" data>
       <p><%= item.quantity %></p>
     </div>
     <div class="card-edit-btn">
-      <%= link_to '+', item_plus_path(item), method: :patch, remote: true, class: 'js-add-to-cart' %>
+      <%= link_to '+', item_plus_path(item), method: :patch, remote: true, data: {action: "click->cart#animate"} %>
     </div>
   </div>
 </div>
