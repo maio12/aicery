@@ -13,7 +13,7 @@ class CheckoutsController < ApplicationController
           lat: @cheapest.latitude,
           lng: @cheapest.longitude,
           infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @cheapest }),
-          image_url: helpers.asset_url('moneycart.png')
+          image_url: helpers.asset_url('pin-giallo-01.png')
 
         }
     end
@@ -28,13 +28,13 @@ class CheckoutsController < ApplicationController
         lat: @nearest.latitude,
         lng: @nearest.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { supermarket: @nearest }),
-        image_url: helpers.asset_url('fastcart.png')
+        image_url: helpers.asset_url('pin-rosso-01.png')
       }
 
       @marker_user = {
         lat: lat,
         lng: lng,
-        image_url: helpers.asset_url('my_location.png')
+        image_url: helpers.asset_url('mirino-01.png')
         # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
         # image_url: helpers.asset_url('3915754-48.png')
       }
