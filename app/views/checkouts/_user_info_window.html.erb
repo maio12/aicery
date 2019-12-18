@@ -1,11 +1,12 @@
+<div class="info-window-username">
+  <% if %>
+    <% user.first_name.nil?  %>
+    <h3>You are here</h3>
+  <% else  %>
+    <h3> <%= user.first_name %></h3>
+  <% end %>
+</div>
 
-
-<% if  %>
-
-  <% user.first_name.nil?  %>
-  <h2>You are here</h2>
-
-<%else  %>
-<p> <%= user.first_name %></p>
-<%end  %>
-<p> <%= user.email %></p>
+<div class="info-window-email">
+  <p><%= user.email %></p>
+</div>
