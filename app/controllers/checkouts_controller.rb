@@ -36,6 +36,8 @@ class CheckoutsController < ApplicationController
         lng: lng,
         image_url: helpers.asset_url('userlocation.png'),
         infoWindow: render_to_string(partial: "user_info_window", locals: { user: current_user }),
+        image_url: helpers.asset_url('my_location.png')
+        # infoWindow: render_to_string(partial: "info_window", locals: { supermarket: @cheapest }),
         # image_url: helpers.asset_url('3915754-48.png')
       }
     end
