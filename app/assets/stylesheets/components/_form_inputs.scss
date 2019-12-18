@@ -1,14 +1,26 @@
-.registration .btn {
+.form-inputs-registration {
+  padding: 30px;
+}
+
+.form-actions-registration {
+
+}
+
+.form-actions-registration .btn {
   font-family: Montserrat;
+  padding: 7px 143px;
   background: #FCC72C;
   color: white;
   border-radius: 4px;
   font-weight: bold;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   margin-right: 10px;
-  width: 210px;
-  margin-left: 80px;
-  margin-bottom: 20px;
+  margin-left: 31px;
+  margin-bottom: 12px;
+}
+
+.tutto .form-inputs-login {
+  padding: 30px;
 }
 
 h2 {
@@ -31,7 +43,7 @@ h2 {
   font-weight: bold;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   margin-right: 10px;
-  width: 210px;
+  width: 345px;
   margin-left: 12px;
   margin-bottom: 20px;
 }
@@ -39,7 +51,7 @@ h2 {
 .bottoni a {
   font-family: Montserrat;
   font-size: 16px;
-  padding: 7px 57px;
+  padding: 6px 140px;
   background: white;
   color: #4A4A4A;
   border-radius: 4px;
