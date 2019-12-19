@@ -3,9 +3,11 @@ class CheckoutsController < ApplicationController
     @list = current_user.lists.find(params[:list_id])
     @product_ids = @list.products.pluck(:id)
 
-    @supermarkets = @list.supermarkets_by_index_differencial
-
+    @supermarkets = @list.supermarkets_by_total_price
     @cheapest = @supermarkets.first
+
+    @supermarketsbdif = @list.supermarkets_by_index_differencial
+    @lowestdif = @supermarketsbdif.first
 
     if @cheapest.present?
       @marker_cheapest =
