@@ -73,12 +73,13 @@ Supermarket.all.each do |supermarket|
     product = Product.all.sample
 
     base_price_cents = product.base_price_cents
-    price_cents = (rand(-0.2..0.2) + 1) * base_price_cents
+    price_cents = (percentage + 1) * base_price_cents
+    differencial = (percentage * 100).round
 
     # base_price * 0.1
     # price
 
-    Inventory.create!(supermarket: supermarket, product: product, price_cents: price_cents)
+    Inventory.create!(supermarket: supermarket, product: product, price_cents: price_cents, differencial: differencial)
   rescue ActiveRecord::RecordInvalid
     next
   end

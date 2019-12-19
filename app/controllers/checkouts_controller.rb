@@ -3,7 +3,7 @@ class CheckoutsController < ApplicationController
     @list = current_user.lists.find(params[:list_id])
     @product_ids = @list.products.pluck(:id)
 
-    @supermarkets = @list.supermarkets_by_total_price
+    @supermarkets = @list.supermarkets_by_index_differencial
 
     @cheapest = @supermarkets.first
 

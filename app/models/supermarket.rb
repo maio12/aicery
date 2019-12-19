@@ -20,6 +20,11 @@ class Supermarket < ApplicationRecord
      Money.new(total)
   end
 
+  def base_price_differencial(ids)
+    inventories.where(inventories: { product_id: ids })
+               .average("inventories.differencial")
+  end
+
   def total_matches(ids)
     inventories.where(inventories: { product_id: ids }).count
   end
