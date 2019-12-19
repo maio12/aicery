@@ -3,12 +3,12 @@
     <i class="fas fa-arrow-left"></i>
   <% end %>
   <p>My Deals</p>
-  <%= link_to list_path(@list) do %>
+  <%= link_to list_path(@cart_list) do %>
     <i class="fas fa-shopping-cart"></i>
-      <% if @list.items.count.positive? %>
-        <p class="notification"><%= @list.items.sum(:quantity)%></p>
+      <% if @cart_list.items.count.positive? %>
+        <p class="notification"><%= @cart_list.items.sum(:quantity)%></p>
       <% else %>
-        <p class="notification-hidden"><%= @list.items.sum(:quantity)%></p>
+        <p class="notification-hidden"><%= @cart_list.items.sum(:quantity)%></p>
       <% end %>
   <% end %>
 </div>
