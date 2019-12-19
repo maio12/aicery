@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+/*    background-color: #EFEFEF;*/
+    background-color: #FCC72C;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
+  }
+
+  .dialog img {
+    width: 330px;
   }
 
   .rails-default-error-page div.dialog {
@@ -19,7 +24,7 @@
   }
 
   .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
+/*    border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
@@ -28,13 +33,22 @@
     border-top-right-radius: 9px;
     background-color: white;
     padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);*/
+    margin-top: 130px;
+    padding: 30px;
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
+    font-size: 30px;
+    color: #00918E;
     line-height: 1.5em;
+    font-family: Montserrat;
+  }
+
+  .rails-default-error-page p {
+    color: white;
+    font-family: Montserrat;
+    font-size: 18px;
   }
 
   .rails-default-error-page div.dialog > p {
@@ -58,9 +72,10 @@
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <img src="images/500.png" alt="">
+      <h1>This Page is Broken</h1>
+     <p>If you are the application owner check the logs for more information.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
